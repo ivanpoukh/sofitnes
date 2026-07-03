@@ -1492,9 +1492,9 @@ function showTerms(e) {
 function validateContact(v) {
   const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
   const tgRe = /^@[a-zA-Z0-9_]{4,32}$/;
-  if (!v) return 'Введи email или Telegram (@username)';
+  if (!v) return 'Введите email или Telegram (@username)';
   if (!emailRe.test(v) && !tgRe.test(v)) {
-    return 'Введи корректный email (name@example.com) или Telegram (@username)';
+    return 'Введите корректный email (name@example.com) или Telegram (@username)';
   }
   return null;
 }
@@ -1567,7 +1567,7 @@ async function sendCon() {
   } catch(e) {
     const isNetwork = e instanceof TypeError;
     document.getElementById('conErrText').textContent = isNetwork
-      ? 'Нет соединения. Проверь интернет или напиши: sofitbetatest@gmail.com'
+      ? 'Нет соединения. Проверьте интернет или напишите: sofitbetatest@gmail.com'
       : 'Ошибка: ' + e.message + '. Напиши нам: sofitbetatest@gmail.com';
     errEl.classList.add('show');
   } finally {
