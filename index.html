@@ -1,0 +1,1977 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<script>
+function loadAnalytics() {
+  if (window.__analyticsLoaded) return;
+  window.__analyticsLoaded = true;
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  window.gtag = gtag;
+  gtag('js', new Date());
+  gtag('config', 'G-2KPWXFBSKH');
+  var gaScript = document.createElement('script');
+  gaScript.async = true;
+  gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-2KPWXFBSKH';
+  document.head.appendChild(gaScript);
+
+  (function(m,e,t,r,i,k,a){
+      m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+      m[i].l=1*new Date();
+      for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+      k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+  })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=110252812', 'ym');
+  ym(110252812, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+}
+
+if (localStorage.getItem('cookie_consent') === '1') {
+  loadAnalytics();
+}
+</script>
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sofit — AI-тренер: персональные тренировки и питание под вашу физиологию</title>
+<meta name="description" content="Sofit — первая динамическая экосистема спортивного биохакинга. Алгоритм Sofit-Collider™ анализирует сон, питание и активность и адаптирует план тренировок в реальном времени. Доступно на iOS и Android.">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sofitnes.netlify.app/">
+<meta property="og:title" content="Sofit — AI-тренер: тренировки под вашу физиологию">
+<meta property="og:description" content="Первая система биохакинга в смартфоне. Алгоритм Sofit-Collider™ адаптирует план тренировок и питания в реальном времени — с учётом сна, стресса и восстановления.">
+<meta property="og:image" content="https://sofitnes.netlify.app/og-image.png">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="Sofit">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sofit — AI-тренер: тренировки под вашу физиологию">
+<meta name="twitter:description" content="Первая система биохакинга в смартфоне. Алгоритм Sofit-Collider™ адаптирует план в реальном времени.">
+<meta name="twitter:image" content="https://sofitnes.netlify.app/og-image.png">
+
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://sofitnes.netlify.app/">
+<!-- Замените VERIFICATION_CODE на код, который выдаст Google Search Console при добавлении сайта -->
+<meta name="google-site-verification" content="VERIFICATION_CODE">
+
+<meta name="theme-color" content="#d4589e">
+
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; min-width: 0; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
+body { font-family: 'Inter', sans-serif; background: #f7f5f2; color: #1a1a2e; overflow-x: hidden; max-width: 100vw; }
+:root {
+  --color-primary: #d4589e;
+  --color-accent: #5b9fd4;
+  --y: var(--color-primary);
+  --red: var(--color-accent);
+}
+
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 60px; height: 64px;
+  background: rgba(247,245,242,.97); backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(26,26,46,.07);
+}
+.nav-logo { font-size: 18px; font-weight: 900; letter-spacing: 5px; color: #1a1a2e; text-decoration: none; }
+.nav-center { display: flex; gap: 40px; list-style: none; }
+.nav-center a {
+  color: rgba(26,26,46,.45); text-decoration: none;
+  font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
+  transition: color .2s, opacity .2s;
+}
+.nav-center a:hover { color: #1a1a2e; }
+.nav-right {}
+.nav-beta {
+  border: 1px solid rgba(26,26,46,.3);
+  color: #1a1a2e; background: transparent;
+  padding: 9px 20px; font-size: 11px; font-weight: 700;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  cursor: pointer; text-decoration: none; display: inline-block;
+  transition: all .2s; border-radius: 2px;
+}
+.nav-beta:hover { background: #1a1a2e; color: #fff; }
+
+#hero {
+  min-height: 100vh; display: flex; flex-direction: column; align-items: center;
+  padding: 80px 18px 0; gap: 40px;
+  position: relative; overflow: hidden;
+}
+#hero::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse 60% 80% at 70% 50%, rgba(212,88,158,.12) 0%, transparent 65%);
+  pointer-events: none;
+}
+.hero-l {
+  width: 100%; max-width: 580px;
+  display: flex; flex-direction: column; justify-content: center;
+  text-align: center;
+}
+.hero-tag {
+  font-size: 10px; font-weight: 700; letter-spacing: 3px;
+  color: var(--y); text-transform: uppercase; margin-bottom: 24px;
+}
+.hero-h1 {
+  font-size: clamp(32px, 8vw, 48px); font-weight: 900;
+  line-height: 1.05; margin-bottom: 28px; color: #1a1a2e;
+}
+.hero-desc {
+  font-size: 14px; line-height: 1.75;
+  color: rgba(26,26,46,.5); margin-bottom: 40px; max-width: 100%;
+}
+.hero-desc strong { color: #1a1a2e; font-weight: 600; }
+.hero-cta-wrap { display: flex; flex-direction: column; gap: 14px; align-items: center; }
+.btn-launch {
+  background: var(--y); color: #fff;
+  padding: 14px 28px; font-size: 11px; font-weight: 800;
+  letter-spacing: 2px; text-transform: uppercase;
+  border: none; border-radius: 3px; cursor: pointer;
+  text-decoration: none; display: inline-block;
+  transition: background .2s, transform .2s, box-shadow .2s;
+}
+.btn-launch:hover {
+  background: #b8407f;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(212,88,158,.35);
+}
+.hero-sub {
+  font-size: 10px; font-weight: 600; letter-spacing: 2px;
+  text-transform: uppercase; color: rgba(26,26,46,.3);
+}
+.hero-r {
+  width: 100%; max-width: 252px;
+  display: flex; justify-content: center; align-items: center;
+  position: relative;
+}
+.phone-wrap {
+  position: relative; display: flex; justify-content: center;
+  align-self: center; padding-bottom: 0;
+}
+
+.phone {
+  width: 252px; height: 528px;
+  background: #1e1b2e;
+  border-radius: 44px;
+  border: 1.5px solid rgba(255,255,255,.12);
+  overflow: hidden;
+  box-shadow:
+    0 60px 120px rgba(0,0,0,.8),
+    0 0 0 1px rgba(255,255,255,.04),
+    inset 0 1px 0 rgba(255,255,255,.07);
+  display: flex; flex-direction: column;
+}
+.ph-notch {
+  width: 80px; height: 26px;
+  background: #000;
+  border-radius: 0 0 18px 18px;
+  margin: 0 auto; flex-shrink: 0;
+}
+.ph-status {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 3px 18px 4px; flex-shrink: 0;
+}
+.ph-time { font-size: 10px; font-weight: 700; color: #fff; letter-spacing: .3px; }
+.ph-icons { display: flex; align-items: center; gap: 4px; }
+.ph-inner { flex: 1; overflow: hidden; display: flex; flex-direction: column; }
+.ph-scroll-area {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.ph-scroll-area::-webkit-scrollbar { display: none; }
+.ph-scroll-content {
+  display: flex; flex-direction: column; gap: 8px;
+  padding: 4px 12px 24px;
+}
+.ph-greeting-row { display: flex; justify-content: space-between; align-items: flex-start; }
+.ph-greeting-sub { font-size: 7px; color: rgba(255,255,255,.35); letter-spacing: 1.2px; text-transform: uppercase; margin-bottom: 3px; }
+.ph-greeting-name { font-size: 17px; font-weight: 800; color: #fff; line-height: 1.15; }
+.ph-avatar {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: #2a2a2a; border: 1.5px solid rgba(255,255,255,.1);
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.ph-cal { background: #2a2540; border: 1px solid rgba(255,255,255,.06); border-radius: 12px; padding: 9px 10px; flex-shrink: 0; box-shadow: 0 8px 18px rgba(0,0,0,.14); }
+.ph-cal-row { display: flex; justify-content: space-between; }
+.ph-cal-day { display: flex; flex-direction: column; align-items: center; gap: 3px; }
+.ph-cal-dn { font-size: 7px; color: rgba(255,255,255,.3); text-transform: uppercase; letter-spacing: .5px; }
+.ph-cal-num {
+  width: 22px; height: 22px; border-radius: 50%;
+  font-size: 10px; font-weight: 600; color: rgba(255,255,255,.5);
+  display: flex; align-items: center; justify-content: center;
+}
+.ph-cal-day.today .ph-cal-dn { color: var(--y); }
+.ph-cal-day.today .ph-cal-num { background: var(--y); color: #fff; font-weight: 800; border: 1.5px solid var(--y); }
+.ph-cal-flame { width: 9px; height: 9px; margin-top: 1px; opacity: 0; }
+.ph-cal-day.active .ph-cal-flame { opacity: 1; }
+
+.ph-streak {
+  display: flex; align-items: center; gap: 3px;
+  background: rgba(255,149,0,.15); border: 1px solid rgba(255,149,0,.3);
+  border-radius: 20px; padding: 3px 8px 3px 6px;
+  align-self: flex-end;
+}
+.ph-streak svg { width: 11px; height: 13px; flex-shrink: 0; }
+.ph-streak-num { font-size: 10px; font-weight: 800; color: #ff9500; letter-spacing: .2px; }
+.ph-greeting-side { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
+.ph-workout {
+  background: linear-gradient(160deg,#2e2847,#241f3a);
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: 16px; padding: 20px 14px 28px; flex-shrink: 0;
+  box-shadow: 0 10px 24px rgba(0,0,0,.18), inset 0 1px 0 rgba(255,255,255,.03);
+}
+.ph-wk-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+.ph-wk-lbl { font-size: 7.5px; color: rgba(255,255,255,.35); letter-spacing: 1.5px; text-transform: uppercase; }
+.ph-wk-arr { width: 20px; height: 20px; border-radius: 50%; background: rgba(255,255,255,.07); display: flex; align-items: center; justify-content: center; }
+.ph-wk-title { font-size: 16px; font-weight: 900; color: #fff; line-height: 1.2; margin-bottom: 12px; }
+.ph-wk-meta { display: flex; align-items: center; gap: 8px; margin-bottom: 16px; }
+.ph-stars { display: flex; gap: 1px; }
+.ph-star { width: 9px; height: 9px; }
+.ph-wk-sep { width: 1px; height: 12px; background: rgba(255,255,255,.1); }
+.ph-wk-stat { display: flex; align-items: center; gap: 3px; }
+.ph-wk-stat-val { font-size: 9px; font-weight: 700; color: rgba(255,255,255,.7); }
+.ph-wk-stat-lbl { font-size: 8px; color: rgba(255,255,255,.3); }
+.ph-wk-btn {
+  background: linear-gradient(135deg, var(--y), #b8407f);
+  border-radius: 26px;
+  padding: 10px 0; display: flex; align-items: center; justify-content: center; gap: 7px; width: 100%;
+  border: none; cursor: pointer;
+  box-shadow: 0 6px 16px rgba(212,88,158,.4), inset 0 1px 0 rgba(255,255,255,.15);
+  transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.ph-wk-btn.pressed {
+  transform: scale(.95);
+  box-shadow: 0 2px 8px rgba(212,88,158,.3), inset 0 1px 0 rgba(255,255,255,.1);
+  filter: brightness(.94);
+}
+.ph-wk-btn-ic { width: 17px; height: 17px; background: rgba(255,255,255,.25); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: transform .2s ease; }
+.ph-wk-btn.pressed .ph-wk-btn-ic { transform: rotate(-18deg); }
+.ph-wk-btn-txt { font-size: 8px; font-weight: 800; color: #fff; letter-spacing: 2px; text-transform: uppercase; }
+.ph-wk-sub { font-size: 7px; color: rgba(255,255,255,.25); letter-spacing: 1.5px; text-transform: uppercase; text-align: center; margin-top: 8px; }
+.ph-scores { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; flex-shrink: 0; margin-top: 24px; }
+.ph-score {
+  background: linear-gradient(160deg,#2e2847,#241f3a);
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: 12px; padding: 9px 10px 10px;
+  box-shadow: 0 8px 18px rgba(0,0,0,.16), inset 0 1px 0 rgba(255,255,255,.03);
+  cursor: pointer;
+  transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.ph-score.pressed {
+  transform: scale(.96);
+  box-shadow: 0 3px 10px rgba(0,0,0,.14);
+  filter: brightness(1.08);
+}
+.ph-score-top { display: flex; align-items: center; gap: 5px; margin-bottom: 8px; }
+.ph-score-ic { width: 20px; height: 20px; border-radius: 7px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.ph-score-name { font-size: 8px; font-weight: 700; color: rgba(255,255,255,.6); text-transform: uppercase; letter-spacing: .8px; }
+.ph-score-dot { width: 4px; height: 4px; border-radius: 50%; background: rgba(255,255,255,.15); margin-left: auto; }
+.ph-ring-box { display: flex; justify-content: center; }
+.ph-ring { position: relative; width: 58px; height: 58px; }
+.ph-ai { background: linear-gradient(155deg,#2a2540,#221d38); border: 1px solid rgba(236,64,122,.18); border-radius: 16px; padding: 14px 14px 16px; flex-shrink: 0; margin-top: 8px; }
+.ph-ai-top { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+.ph-ai-ic { width: 22px; height: 22px; border-radius: 7px; background: linear-gradient(135deg,#ec407a,#ab47bc); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.ph-ai-title { font-size: 9px; font-weight: 800; color: #fff; line-height: 1.3; }
+.ph-ai-sub { font-size: 7px; font-weight: 700; color: #ec407a; letter-spacing: .8px; text-transform: uppercase; }
+.ph-ai-search { display: flex; align-items: center; gap: 6px; background: rgba(0,0,0,.28); border: 1px solid rgba(255,255,255,.08); border-radius: 24px; padding: 9px 12px; }
+.ph-ai-search-ic { flex-shrink: 0; }
+.ph-ai-search-text { font-size: 8.5px; color: rgba(255,255,255,.65); white-space: nowrap; overflow-x: hidden; scrollbar-width: none; }
+.ph-ai-search-text::-webkit-scrollbar { display: none; }
+.ph-ai-caret { width: 1px; height: 10px; background: #ec407a; flex-shrink: 0; animation: phAiBlink 1s step-end infinite; }
+@keyframes phAiBlink { 0%,49% { opacity: 1; } 50%,100% { opacity: 0; } }
+.ph-ring svg { width: 58px; height: 58px; transform: rotate(-90deg); }
+.ph-ring-inner { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.ph-ring-n { font-size: 15px; font-weight: 900; color: #fff; line-height: 1; }
+.ph-ring-u { font-size: 6px; color: rgba(255,255,255,.3); letter-spacing: .8px; text-transform: uppercase; }
+.ph-age {
+  background: linear-gradient(160deg,#2e2847,#241f3a);
+  border: 1px solid rgba(212,88,158,.18);
+  border-radius: 16px; padding: 14px 14px 16px; flex-shrink: 0; margin-top: 8px;
+  box-shadow: 0 10px 24px rgba(0,0,0,.18), inset 0 1px 0 rgba(255,255,255,.03);
+}
+.ph-age-top { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+.ph-age-ic { width: 22px; height: 22px; border-radius: 7px; background: linear-gradient(135deg,var(--y),var(--red)); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.ph-age-title { font-size: 9px; font-weight: 800; color: #fff; line-height: 1.3; }
+.ph-age-sub { font-size: 7px; font-weight: 600; color: rgba(255,255,255,.35); letter-spacing: .4px; }
+.ph-age-body { display: flex; align-items: center; gap: 12px; }
+.ph-age-ring { position: relative; width: 64px; height: 64px; flex-shrink: 0; transform: translateZ(0); }
+.ph-age-ring svg { width: 64px; height: 64px; transform: rotate(-90deg); overflow: visible; }
+.ph-age-progress { will-change: filter; }
+.ph-age-ring-inner { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.ph-age-num { font-size: 17px; font-weight: 900; color: #fff; line-height: 1; }
+.ph-age-unit { font-size: 6px; color: rgba(255,255,255,.3); letter-spacing: .8px; text-transform: uppercase; margin-top: 1px; }
+.ph-age-info { flex: 1; min-width: 0; }
+.ph-age-delta {
+  display: flex; align-items: center; gap: 4px; font-size: 8.5px; font-weight: 700; color: #4caf50; margin-bottom: 5px; line-height: 1.3;
+  opacity: 0; transform: translateY(10px);
+  transition: opacity .6s ease .2s, transform .6s cubic-bezier(.34,1.56,.64,1) .2s;
+}
+.ph-age.filled .ph-age-delta { opacity: 1; transform: translateY(0); }
+.ph-age-delta svg { flex-shrink: 0; }
+.ph-age.filled .ph-age-delta svg { animation: phArrowRise 1.8s ease-in-out .9s infinite; }
+@keyframes phArrowRise {
+  0%, 100% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(-2.5px); opacity: .65; }
+}
+.ph-age-desc { font-size: 7.5px; color: rgba(255,255,255,.4); line-height: 1.5; }
+.ph-age-progress {
+  filter: drop-shadow(0 0 0 rgba(212,88,158,0));
+  transition: filter .5s ease;
+}
+.ph-age.filled .ph-age-progress {
+  animation: phAgeGlow 2.6s ease-in-out infinite;
+}
+@keyframes phAgeGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 4px rgba(91,159,212,.35));
+  }
+  50% {
+    filter: drop-shadow(0 0 9px rgba(91,159,212,.6));
+  }
+}
+.ph-nav {
+  display: flex; justify-content: space-around; align-items: center;
+  padding: 8px 4px 12px;
+  background: #1e1b2e; border-top: 1px solid rgba(255,255,255,.06);
+  flex-shrink: 0;
+}
+.ph-nav-it { display: flex; flex-direction: column; align-items: center; gap: 3px; }
+.ph-nav-ic { width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; }
+.ph-nav-ic svg { width: 16px; height: 16px; }
+.ph-nav-lbl { font-size: 6px; color: rgba(255,255,255,.25); letter-spacing: .5px; text-transform: uppercase; }
+.ph-nav-home { width: 34px; height: 34px; background: var(--y); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-top: -10px; box-shadow: 0 4px 14px rgba(212,88,158,.5); }
+.ph-nav-home svg { width: 16px; height: 16px; }
+.ph-glow { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); width: 280px; height: 200px; background: radial-gradient(ellipse at 50% 100%, rgba(91,159,212,.2) 0%, transparent 70%); pointer-events: none; }
+
+.sec-lbl { font-size: 11px; font-weight: 700; letter-spacing: 3px; color: var(--y); text-transform: uppercase; }
+
+#reality { background: #f0edf8; padding: 100px 60px; }
+.rl-top { margin-bottom: 80px; }
+.rl-top .sec-lbl { display: block; margin-bottom: 40px; }
+.rl-top h2 { font-size: clamp(36px, 4.5vw, 60px); font-weight: 900; line-height: 1.1; color: #1a1a2e; }
+.rl-cols {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid rgba(26,26,46,.08);
+}
+.rl-col {
+  padding: 40px 36px 40px 0;
+  border-right: 1px solid rgba(26,26,46,.08);
+}
+.rl-col:nth-child(1) { padding-left: 0; }
+.rl-col:nth-child(2) { padding-left: 36px; }
+.rl-col:nth-child(3) { padding-left: 36px; border-right: none; padding-right: 0; }
+.rl-cols-2 {
+  display: grid; grid-template-columns: 1fr 1fr;
+  border-top: 1px solid rgba(26,26,46,.08);
+}
+.rl-cols-2 .rl-col:nth-child(1) { padding-left: 0; border-right: 1px solid rgba(26,26,46,.08); }
+.rl-cols-2 .rl-col:nth-child(2) { padding-left: 36px; border-right: none; padding-right: 0; }
+.rl-ct { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 14px; color: #1a1a2e; }
+.rl-cd { font-size: 13px; color: rgba(26,26,46,.5); line-height: 1.75; }
+
+#solution { background: #f7f5f2; padding: 100px 60px; }
+.sol-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: start; }
+.sol-l .sec-lbl { display: block; margin-bottom: 20px; }
+.sol-h { font-size: clamp(28px, 3.2vw, 46px); font-weight: 900; line-height: 1.2; margin-bottom: 52px; color: #1a1a2e; }
+.sl-row { margin-bottom: 32px; }
+.sl-top { display: flex; justify-content: space-between; margin-bottom: 10px; }
+.sl-name { font-size: 10px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(26,26,46,.5); }
+.sl-val { font-size: 10px; font-weight: 700; color: var(--y); letter-spacing: 1px; }
+input[type=range] { -webkit-appearance: none; width: 100%; height: 3px; background: rgba(26,26,46,.12); border-radius: 2px; outline: none; cursor: pointer; }
+input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 17px; height: 17px; border-radius: 50%; background: var(--y); border: 2px solid #f7f5f2; box-shadow: 0 0 8px rgba(245,197,24,.6); cursor: grab; }
+input[type=range]::-moz-range-thumb { width: 17px; height: 17px; border-radius: 50%; background: var(--y); border: 2px solid #f7f5f2; }
+.state-wrap { margin-top: 40px; }
+.state-lbl { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(26,26,46,.3); margin-bottom: 10px; }
+.state-bar { display: flex; height: 5px; gap: 3px; margin-bottom: 8px; }
+.state-seg { flex: 1; border-radius: 2px; transition: opacity .4s; }
+.s1{background:#e53935}.s2{background:#f5a623}.s3{background:#8bc34a}.s4{background:#4caf50}
+.state-labels { display: flex; justify-content: space-between; }
+.state-labels span { font-size: 9px; color: rgba(26,26,46,.3); letter-spacing: 1px; text-transform: uppercase; }
+
+.ac {
+  border: 1px solid rgba(26,26,46,.1); border-radius: 8px; padding: 28px; background: #fff;
+  min-height: 360px; position: relative;
+  transition: border-color .5s ease, box-shadow .5s ease;
+}
+.ac.blink-danger { animation: blinkDanger 1s ease-in-out infinite; }
+.ac.blink-super { animation: blinkSuper 1s ease-in-out infinite; }
+@keyframes blinkDanger {
+  0%,100% { box-shadow: 0 0 0 0 rgba(229,57,53,0); }
+  50% { box-shadow: 0 0 20px 4px rgba(229,57,53,.35); }
+}
+@keyframes blinkSuper {
+  0%,100% { box-shadow: 0 0 0 0 rgba(76,175,80,0); }
+  50% { box-shadow: 0 0 20px 4px rgba(76,175,80,.35); }
+}
+.ac-top-row { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
+.ac-icon-wrap {
+  width: 48px; height: 48px; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  transition: background .5s;
+}
+.ac-icon-wrap svg { width: 22px; height: 22px; }
+.ac-title-col {}
+.ac-sys { font-size: 9px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: rgba(26,26,46,.3); margin-bottom: 4px; }
+.ac-name { font-size: 20px; font-weight: 900; letter-spacing: .5px; text-transform: uppercase; transition: color .5s; }
+.ac-desc {
+  font-size: 13px; color: rgba(26,26,46,.48); line-height: 1.65;
+  padding-bottom: 20px; border-bottom: 1px solid rgba(26,26,46,.06); margin-bottom: 18px;
+  transition: opacity .4s;
+}
+.ac-proto { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: rgba(26,26,46,.25); margin-bottom: 14px; }
+.ac-items { display: flex; flex-direction: column; gap: 10px; transition: opacity .4s; }
+.ac-item { display: flex; align-items: center; gap: 12px; }
+.ac-item-ic {
+  width: 32px; height: 32px; border-radius: 8px;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  transition: background .5s;
+}
+.ac-item-ic svg { width: 15px; height: 15px; }
+.ac-item-t { font-size: 14px; font-weight: 600; transition: color .4s; }
+
+.ac-fade-out { animation: acFadeOut .25s ease forwards; }
+.ac-fade-in  { animation: acFadeIn  .45s ease forwards; }
+@keyframes acFadeOut { from{opacity:1;filter:blur(0);transform:scale(1)} to{opacity:0;filter:blur(6px);transform:scale(.97)} }
+@keyframes acFadeIn  { from{opacity:0;filter:blur(6px);transform:scale(.97)} to{opacity:1;filter:none;transform:scale(1)} }
+
+#comparison { background: #f0edf8; padding: 100px 60px; }
+.comp-h { font-size: clamp(36px, 4.5vw, 60px); font-weight: 900; margin-top: 20px; margin-bottom: 60px; }
+.comp-tbl { width: 100%; border-collapse: collapse; }
+.comp-tbl tr { border-bottom: 1px solid rgba(26,26,46,.06); }
+.comp-tbl thead tr { border-bottom: none; }
+.comp-tbl th {
+  padding: 22px 28px; text-align: left;
+  font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+  color: rgba(26,26,46,.35);
+}
+.comp-tbl th.th-s {
+  font-size: 18px; font-weight: 900; letter-spacing: 0; text-transform: none;
+  color: #1a1a2e; border-top: 2px solid var(--red); padding-top: 20px;
+}
+.comp-tbl td { padding: 22px 28px; font-size: 13px; vertical-align: middle; }
+.comp-tbl td:first-child {
+  font-size: 10px; font-weight: 700; letter-spacing: 2px;
+  text-transform: uppercase; color: rgba(26,26,46,.45);
+}
+.td-s { color: rgba(26,26,46,.9) !important; }
+.cx { display: flex; align-items: center; gap: 8px; }
+.cx-x { color: var(--red); display: flex; align-items: center; }
+.cx-x svg { width: 11px; height: 11px; flex-shrink: 0; }
+.cx span { color: rgba(26,26,46,.35); font-size: 13px; }
+.ck { display: flex; align-items: center; gap: 8px; color: rgba(26,26,46,.8); }
+.ck-ic { color: var(--y); display: flex; align-items: center; }
+.ck-ic svg { width: 13px; height: 13px; flex-shrink: 0; }
+
+#system { background: #f7f5f2; padding: 100px 60px; }
+.sys-hdr { text-align: center; margin-bottom: 60px; }
+.sys-hdr h2 { font-size: clamp(36px, 5.5vw, 68px); font-weight: 900; letter-spacing: 2px; margin-bottom: 8px; color: #1a1a2e; }
+.sys-sub { font-size: 11px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--y); }
+.carousel {
+  display: flex; align-items: center; justify-content: center;
+  gap: 24px; padding: 40px 60px;
+}
+.car-btn {
+  width: 46px; height: 46px; flex-shrink: 0;
+  background: rgba(26,26,46,.05); border: 1px solid rgba(26,26,46,.12);
+  border-radius: 3px; color: #1a1a2e; font-size: 20px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all .2s; z-index: 10;
+}
+.car-btn:hover { background: rgba(212,88,158,.1); border-color: var(--y); color: var(--y); }
+
+.car-inner {
+  position: relative;
+  width: 300px; height: 340px;
+  flex-shrink: 0;
+}
+
+.sc {
+  position: absolute; inset: 0;
+  border: 1px solid rgba(26,26,46,.1); border-radius: 8px;
+  padding: 28px 24px; overflow: hidden;
+  width: 300px; height: 340px;
+  transition: opacity .6s ease, filter .6s ease, transform .6s ease,
+              border-color .6s ease, background .6s ease;
+}
+
+.sc.active {
+  opacity: 1; filter: none; transform: translateX(0) scale(1);
+  border-color: var(--y); background: #fff;
+  z-index: 3; pointer-events: auto; cursor: default;
+}
+.sc.side-prev {
+  opacity: .25; filter: blur(3px);
+  transform: translateX(-200px) scale(.9);
+  z-index: 2; pointer-events: auto; cursor: pointer;
+}
+.sc.side-next {
+  opacity: .25; filter: blur(3px);
+  transform: translateX(200px) scale(.9);
+  z-index: 2; pointer-events: auto; cursor: pointer;
+}
+.sc.side-prev:hover, .sc.side-next:hover { opacity: .4; }
+.sc.car-hidden {
+  opacity: 0; filter: blur(8px); transform: scale(.85);
+  z-index: 1; pointer-events: none;
+}
+
+.sc-icon { margin-bottom: 14px; }
+.sc-icon svg { width: 26px; height: 26px; }
+.sc-tag { font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--y); margin-bottom: 8px; }
+.sc-title { font-size: 18px; font-weight: 900; text-transform: uppercase; letter-spacing: .5px; line-height: 1.2; margin-bottom: 24px; color: #1a1a2e; }
+.sc.side .sc-title { font-size: 12px; margin-bottom: 0; }
+.sc.side .sc-tag, .sc.side .sc-icon, .sc.side .sc-desc { display: none; }
+.sc-desc { font-size: 13px; color: rgba(26,26,46,.5); line-height: 1.7; }
+
+#faq { background: #f0edf8; padding: 100px 60px; }
+.faq-top { margin-bottom: 56px; }
+.faq-top .sec-lbl { display: block; margin-bottom: 16px; }
+.faq-top h2 { font-size: clamp(32px, 4vw, 56px); font-weight: 900; line-height: 1.1; color: #1a1a2e; }
+.fi { border-bottom: 1px solid rgba(26,26,46,.08); }
+.fq {
+  width: 100%; background: none; border: none; text-align: left;
+  padding: 26px 0; color: #1a1a2e; font-family: 'Inter', sans-serif;
+  font-size: 17px; font-weight: 700; cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center; gap: 20px;
+  transition: color .2s;
+}
+.fq:hover { color: var(--y); }
+.fq-plus { font-size: 22px; font-weight: 300; color: rgba(26,26,46,.3); flex-shrink: 0; transition: transform .3s; line-height: 1; }
+.fi.open .fq-plus { transform: rotate(45deg); color: var(--y); }
+.fa { max-height: 0; overflow: hidden; transition: max-height .4s ease; }
+.fa-inner { padding: 0 0 24px; font-size: 15px; color: rgba(26,26,46,.5); line-height: 1.8; max-width: 720px; }
+.fi.open .fa { max-height: 200px; }
+
+#contact { background: #f7f5f2; padding: 120px 60px; position: relative; overflow: hidden; border-top: 1px solid rgba(26,26,46,.07); }
+#contact::before { content:''; position:absolute; inset:0; background: radial-gradient(ellipse at 50% 0%, rgba(212,88,158,.06) 0%, transparent 55%); pointer-events:none; }
+.con-inner { max-width: 820px; margin: 0 auto; text-align: center; position: relative; }
+.con-lbl { font-size: 11px; font-weight: 700; letter-spacing: 3px; color: var(--y); text-transform: uppercase; display: block; margin-bottom: 28px; }
+.con-title { font-size: clamp(38px, 6vw, 82px); font-weight: 900; line-height: 1.05; margin-bottom: 56px; color: #1a1a2e; }
+.con-form-lbl { font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--y); margin-bottom: 24px; display: block; }
+.con-row { display: flex; align-items: center; gap: 12px; max-width: 620px; margin: 0 auto; border-bottom: 1px solid rgba(26,26,46,.2); padding-bottom: 4px; }
+.con-input { flex: 1; background: transparent; border: none; padding: 14px 0; color: #1a1a2e; font-family: 'Inter', sans-serif; font-size: 13px; letter-spacing: 2px; outline: none; }
+.con-input::placeholder { color: rgba(26,26,46,.3); letter-spacing: 2px; font-size: 11px; text-transform: uppercase; }
+.con-btn { background: var(--y); color: #fff; padding: 14px 28px; font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; border: none; border-radius: 3px; cursor: pointer; white-space: nowrap; transition: all .2s; }
+.con-btn:hover { opacity: .88; transform: translateY(-1px); }
+.con-ok, .con-err {
+  display: none; align-items: center; gap: 8px;
+  background: #fff; border-radius: 10px; padding: 10px 18px;
+  margin: 20px auto 0; width: fit-content; max-width: 100%;
+  box-shadow: 0 4px 14px rgba(26,26,46,.06);
+  font-size: 13px; font-weight: 600; color: #1a1a2e; text-align: left;
+}
+.con-ok.show, .con-err.show { display: inline-flex; }
+.msg-ic { width: 18px; height: 18px; border-radius: 50%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+.msg-ic svg { width: 11px; height: 11px; }
+.con-ok { border: 1px solid #f4c0d1; }
+.con-ok .msg-ic { background: var(--y); }
+.con-err { border: 1px solid #f7c1c1; }
+.con-err .msg-ic { background: #e53935; }
+
+footer { background: #ede9f5; padding: 28px 60px; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(26,26,46,.07); flex-wrap: wrap; gap: 14px; }
+.ft-l { display: flex; align-items: center; gap: 18px; }
+.ft-logo { font-size: 16px; font-weight: 900; letter-spacing: 4px; color: #1a1a2e; }
+.ft-copy { font-size: 12px; color: rgba(26,26,46,.35); }
+.ft-links { display: flex; gap: 28px; }
+.ft-a { color: rgba(26,26,46,.45); text-decoration: none; font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; transition: color .2s; }
+.ft-a:hover { color: var(--y); }
+
+.nav-burger {
+  display: none; flex-direction: column; gap: 5px;
+  background: none; border: none; cursor: pointer; padding: 6px;
+}
+.nav-burger span {
+  display: block; width: 22px; height: 2px;
+  background: #1a1a2e; border-radius: 2px;
+  transition: transform .3s, opacity .3s;
+}
+.nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-burger.open span:nth-child(2) { opacity: 0; }
+.nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.mobile-menu {
+  display: none; position: fixed; top: 64px; left: 0; right: 0; z-index: 999;
+  background: rgba(247,245,242,.99); backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(26,26,46,.08);
+  flex-direction: column; padding: 12px 0 16px;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a {
+  padding: 14px 24px; color: rgba(26,26,46,.6); text-decoration: none;
+  font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
+  transition: color .15s;
+}
+.mobile-menu a:hover { color: #1a1a2e; }
+
+#cookie-banner {
+  position: fixed; bottom: 16px; left: 16px; right: 16px; z-index: 9999;
+  max-width: 380px; margin: 0 auto;
+  background: #ffffff; color: #1a1a2e;
+  padding: 18px 40px 20px 20px;
+  border-radius: 16px;
+  font-size: 13px; line-height: 1.6;
+  transform: translateY(calc(100% + 32px)); transition: transform .4s ease;
+  box-shadow: 0 8px 32px rgba(0,0,0,.16);
+  border: 1px solid rgba(26,26,46,.08);
+}
+#cookie-banner.show { transform: translateY(0); }
+#cookie-close {
+  position: absolute; top: 10px; right: 12px;
+  background: none; border: none; font-size: 18px; line-height: 1;
+  color: rgba(26,26,46,.35); cursor: pointer; padding: 4px; z-index: 1;
+}
+#cookie-close:hover { color: rgba(26,26,46,.7); }
+#cookie-banner-short { display: block; }
+#cookie-banner-short span { display: inline; }
+#cookie-detail {
+  display: none; margin-top: 14px;
+  font-size: 13px; line-height: 1.65; color: rgba(26,26,46,.6);
+  border-top: 1px solid rgba(26,26,46,.1); padding-top: 14px;
+}
+#cookie-detail.open { display: block; }
+#cookie-toggle {
+  background: none; border: none; color: var(--color-primary);
+  font-size: 13px; font-weight: 600; cursor: pointer; padding: 0;
+  text-decoration: underline; display: inline; vertical-align: baseline; gap: 4px;
+}
+#cookie-accept {
+  display: block; width: 100%; margin-top: 16px;
+  background: var(--color-primary); color: #fff; border: none;
+  padding: 14px; border-radius: 10px; font-size: 15px; font-weight: 600;
+  cursor: pointer; transition: opacity .2s;
+}
+#cookie-accept:hover { opacity: .88; }
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity .65s ease, transform .65s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+@media(max-width:1100px) {
+  nav { padding: 0 30px; }
+  #hero, #reality, #solution, #comparison, #system, #faq, #contact { padding-left: 30px; padding-right: 30px; }
+  .sol-grid { grid-template-columns: 1fr; gap: 52px; }
+  .rl-cols, .rl-cols-2 { grid-template-columns: 1fr 1fr; }
+  .rl-col { border-right: 1px solid rgba(26,26,46,.08) !important; }
+  .rl-col:nth-child(even) { border-right: none !important; }
+}
+@media(min-width:769px) {
+  #hero { flex-direction: row; padding: 64px 60px 0; gap: 0; }
+  .hero-l { flex: 0 0 50%; max-width: 50%; padding-right: 60px; text-align: left; }
+  .hero-r { flex: 0 0 50%; max-width: 50%; }
+  .hero-h1 { font-size: clamp(40px, 5vw, 68px); }
+  .hero-desc { font-size: 15px; max-width: 460px; }
+  .hero-cta-wrap { align-items: flex-start; }
+  .btn-launch { padding: 16px 32px; font-size: 12px; }
+}
+@media(max-width:768px) {
+  .nav-center { display: none; }
+  .nav-burger { display: flex; }
+  .nav-beta { display: none; }
+  #hero { padding: 80px 18px 40px; gap: 40px; }
+  .hero-r { max-width: 100%; display: flex; justify-content: center; }
+  .phone {
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    mask-image: radial-gradient(white, black);
+    transform: translateZ(0);
+  }
+  .rl-cols, .rl-cols-2 { grid-template-columns: 1fr; }
+  .rl-col { border-right: none !important; border-bottom: 1px solid rgba(26,26,46,.08); padding: 28px 0 !important; }
+
+  #comparison { padding-left: 16px; padding-right: 16px; overflow-x: hidden; }
+  .comp-tbl { table-layout: fixed; width: 100%; }
+  .comp-tbl th, .comp-tbl td { padding: 10px 8px; font-size: 10px; word-break: break-word; }
+  .comp-tbl th:first-child, .comp-tbl td:first-child { width: 26%; font-size: 9px; padding-left: 4px; }
+  .comp-tbl th.th-s { font-size: 13px; }
+  .cx span { font-size: 10px; }
+  .ck { font-size: 10px; }
+
+  footer {
+    flex-direction: column; align-items: flex-start;
+    padding: 24px 20px; gap: 16px;
+  }
+  .ft-l { flex-direction: column; align-items: flex-start; gap: 4px; }
+  .ft-links { flex-wrap: wrap; gap: 14px 20px; }
+  .ft-a { font-size: 10px; }
+}
+@media(max-width:480px) {
+  html, body { overflow-x: hidden; max-width: 100vw; }
+  #hero { padding: 70px 16px 32px; }
+  .hero-h1 { font-size: clamp(28px, 8vw, 44px); }
+  .hero-desc { font-size: 13px; }
+  .btn-launch { padding: 12px 24px; font-size: 10px; }
+
+  .hero-r { max-width: 100%; }
+  .phone-wrap { width: 100%; display: flex; justify-content: center; }
+  .phone {
+    width: min(220px, 65vw);
+    height: min(460px, 137vw);
+    border-radius: clamp(32px, 10vw, 44px) !important;
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    mask-image: radial-gradient(white, black);
+    transform: translateZ(0);
+  }
+  .ph-glow { width: min(280px, 90vw); }
+
+  .rl-top h2, .comp-h, .sys-hdr h2, .faq-top h2, .con-title { font-size: clamp(22px, 8vw, 36px); }
+  .sol-grid { gap: 32px; }
+  .ac { padding: 20px; }
+
+  .comp-tbl th, .comp-tbl td { padding: 8px 5px; font-size: 9px; }
+  .comp-tbl th:first-child, .comp-tbl td:first-child { width: 24%; font-size: 8px; }
+  .comp-tbl th.th-s { font-size: 12px; }
+  .cx span, .ck { font-size: 9px; }
+  .cx-x svg, .ck-ic svg { width: 9px; height: 9px; }
+
+  .sc { padding: 20px 16px; }
+  .sc-title { font-size: 14px; margin-bottom: 20px; }
+  .car-inner { width: 240px; height: 300px; }
+  .sc { width: 240px; height: 300px; }
+  .sc.side-prev { transform: translateX(-140px) scale(.88); }
+  .sc.side-next { transform: translateX(140px) scale(.88); }
+  .carousel { padding: 24px 16px; gap: 8px; }
+  .fq { font-size: 14px; }
+  .fa-inner { font-size: 13px; }
+  .con-title { font-size: clamp(24px, 9vw, 42px); }
+  .con-row { flex-direction: column; align-items: stretch; gap: 10px; border-bottom: none; }
+  .con-input { border-bottom: 1px solid rgba(26,26,46,.2); padding: 12px 0; }
+  .con-btn { width: 100%; padding: 14px; text-align: center; }
+  .con-ok, .con-err { width: 100%; box-sizing: border-box; }
+
+  footer { padding: 20px 16px; }
+  .ft-links { gap: 10px 16px; }
+  .ft-a { font-size: 9px; letter-spacing: 1px; }
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Sofit",
+  "alternateName": "Sofit AI-тренер",
+  "url": "https://sofitnes.netlify.app/",
+  "description": "Sofit — первая динамическая экосистема спортивного биохакинга. Алгоритм Sofit-Collider™ анализирует сон, питание и активность и адаптирует план тренировок в реальном времени.",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "iOS, Android",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD",
+    "description": "Бесплатный бета-доступ на 14 дней"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Нужны ли мне смарт-часы?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Необязательно. В Sofit можно вводить данные самостоятельно. Занимает это в среднем, не более 2–3 минут в день." }
+    },
+    {
+      "@type": "Question",
+      "name": "Как мне следить за техникой?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Благодаря алгоритму Sofit-Collider™ наш AI-тренер следит за техникой через камеру телефона и даёт голосовые рекомендации." }
+    },
+    {
+      "@type": "Question",
+      "name": "Подходит ли приложение для новичков?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Да, Sofit адаптируется под любой уровень подготовки. Алгоритм Sofit-Collider™ начинает с твоих текущих показателей и постепенно увеличивает нагрузку." }
+    },
+    {
+      "@type": "Question",
+      "name": "Что если у меня была травма?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sofit учитывает ограничения и исключает упражнения, которые могут навредить. Просто укажи зоны, которые нужно беречь, при настройке профиля." }
+    },
+    {
+      "@type": "Question",
+      "name": "Можно ли тренироваться только дома?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Абсолютно. Функция «Умный инвентарь» позволяет указать доступное оборудование — дома, в зале или на улице." }
+    },
+    {
+      "@type": "Question",
+      "name": "Нужно ли мне вводить всё, что я ем?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Нет. Достаточно сфотографировать блюдо — Sofit распознает состав и посчитает КБЖУ автоматически." }
+    },
+    {
+      "@type": "Question",
+      "name": "Как быстро я увижу первый результат?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Благодаря точной адаптации нагрузки, большинство пользователей замечают улучшение самочувствия и энергии уже через 10-14 дней." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <a href="#hero" class="nav-logo">SOFIT</a>
+  <ul class="nav-center">
+    <li><a href="#reality">Реальность</a></li>
+    <li><a href="#solution">Решение</a></li>
+    <li><a href="#comparison">Сравнение</a></li>
+    <li><a href="#system">Система</a></li>
+    <li><a href="#faq">Вопросы</a></li>
+  </ul>
+  <div class="nav-right" style="display:flex;align-items:center;gap:12px;">
+    <a href="#contact" class="nav-beta">Стать бета-тестером</a>
+    <button class="nav-burger" id="burger" aria-label="Открыть меню" aria-expanded="false" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Мобильное меню">
+  <a href="#reality" onclick="closeMenu()">Реальность</a>
+  <a href="#solution" onclick="closeMenu()">Решение</a>
+  <a href="#comparison" onclick="closeMenu()">Сравнение</a>
+  <a href="#system" onclick="closeMenu()">Система</a>
+  <a href="#faq" onclick="closeMenu()">Вопросы</a>
+  <a href="#contact" onclick="closeMenu()" style="color:#d4589e;">→ Стать бета-тестером</a>
+</div>
+
+<section id="hero">
+  <div class="hero-l reveal">
+    <div class="hero-tag">Первая система спортивного биохакинга</div>
+    <h1 class="hero-h1">Перестань<br>тренироваться<br>против своей<br>физиологии</h1>
+    <p class="hero-desc">
+      <strong>Sofit</strong> — это динамическая экосистема в твоем смартфоне. Наш алгоритм Sofit-Collider™ анализирует Сон, Питание и Активность как единое целое, а главное твой виртуальный персональный Тренер. Любое изменение в одном блоке вызывает цепную реакцию адаптации во всех остальных. Это первый план, который эволюционирует вместе с тобой в реальном времени.
+    </p>
+    <div class="hero-cta-wrap">
+      <a href="#contact" class="btn-launch">Запустить трансформацию</a>
+      <span class="hero-sub">Скоро, на iOS и Android &nbsp;•&nbsp; Бесплатно 14 дней</span>
+    </div>
+  </div>
+
+  <div class="hero-r reveal">
+    <div class="phone-wrap">
+      <div class="phone">
+        <div class="ph-notch"></div>
+        <div class="ph-status">
+          <span class="ph-time">9:41</span>
+          <div class="ph-icons">
+            <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
+              <rect x="0" y="6.5" width="2.2" height="3.5" rx=".8" fill="white" opacity=".3"/>
+              <rect x="3.2" y="4.5" width="2.2" height="5.5" rx=".8" fill="white" opacity=".5"/>
+              <rect x="6.4" y="2.5" width="2.2" height="7.5" rx=".8" fill="white" opacity=".75"/>
+              <rect x="9.6" y="0" width="2.2" height="10" rx=".8" fill="white"/>
+            </svg>
+            <svg width="13" height="10" viewBox="0 0 13 10" fill="none">
+              <path d="M6.5 7.5a1.5 1.5 0 110 3 1.5 1.5 0 010-3z" fill="white"/>
+              <path d="M6.5 4.5c1.4 0 2.65.57 3.56 1.5L11.5 4.5A7 7 0 006.5 2.5 7 7 0 001.5 4.5L3 6c.9-.93 2.15-1.5 3.5-1.5z" fill="white" opacity=".65"/>
+              <path d="M6.5 1.5c2.3 0 4.37.93 5.87 2.44L13.5 2.5A10.5 10.5 0 006.5-.5 10.5 10.5 0 00-.5 2.5l1.13 1.44A8.5 8.5 0 016.5 1.5z" fill="white" opacity=".35"/>
+            </svg>
+            <svg width="20" height="10" viewBox="0 0 20 10" fill="none">
+              <rect x=".5" y=".5" width="16" height="9" rx="2.2" stroke="white" stroke-opacity=".3"/>
+              <rect x="1.5" y="1.5" width="12" height="7" rx="1.5" fill="white"/>
+              <path d="M17.5 3.2v3.6a1.8 1.8 0 000-3.6z" fill="white" opacity=".35"/>
+            </svg>
+          </div>
+        </div>
+        <div class="ph-inner">
+          <div class="ph-scroll-area">
+            <div class="ph-scroll-content">
+              <div class="ph-greeting-row">
+                <div>
+                  <div class="ph-greeting-sub">Главная / Сегодня</div>
+                  <div class="ph-greeting-name">Привет,<br>Александр</div>
+                </div>
+                <div class="ph-greeting-side">
+                  <div class="ph-streak">
+                    <svg viewBox="0 0 24 28" fill="none">
+                      <path d="M12 1C12 6 6 8 6 15c0 4.5 3.2 8 8 8s8-3.2 8-7.5c0-3-1.5-5-3-6.5.3 2-.5 3.5-1.5 4-.5-4-3-6-3.5-9-1 1.5-2 3-2 6.5C11.5 12 9 11.5 9 8.5 9 5 11 2.5 12 1z" fill="#ff9500"/>
+                      <path d="M12 10c.5 2-.7 3-1.2 4.3-.6 1.6-.1 3.2 1.2 4-1.6-.2-2.8-1.6-2.8-3.3 0-2.6 2-3.6 2.8-5z" fill="#ffcc66"/>
+                    </svg>
+                    <span class="ph-streak-num">12</span>
+                  </div>
+                  <div class="ph-avatar">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAKuUlEQVR4nOVbXYwbVxU+d+7MjjfL1k2TJk1SoFVEaRRADQppSqlCW1HaitKHKhUUAQoSD6FP4a8PCCzggUpFlUpRyQqJF8QDVkEiEkEhJGnRUqXE1S7ppkkXNtv1/tgb7/p3PP93Dg++13vtHXvt9ThZ6CeNdmzPnHPud+4598y5swDvc5AbbUBEIIhYOyEEu7qxL+asAUSkXDcCQMDPFQAICCFBt7IIIUz6rAq53ZKxliKFKxPnXZOHiGSt+zg5HdskzkdHR3cePnyYNv1O5Wu6Bje4pZBuhMsDn5+ff6BYLP7INM0/VavV1x3HOVOpVF5Ip9Mf71SukLe4uPioZVlvuK5bchznHdM0f5nL5T47MjKircdOWUHDTXNzc/tM03zFtu2xarX6u3fffXcXv25Nj4kZMzU1td227b9gC3ie5xQKhe+tZbT4zTCMF9vIumIYxiuzs7Mf6ZoEwe74+PhQsVj8immaf/V9n8kKHMf599TU1F2dCEdEJZFIKNVq9ZSwjx++dHiIGCAi5vP5r/L7VpErviuVSsckWT6/l8lyOBG56enpPXw2r02CuGh5efnTjuNMyoNmjPlcictJmFtcXLynHQnC4HQ6fUAyOMBweIjILMu6ALXMvipfICJJJpPUtu3/8HtcRPQYY4zLFbIZItqIiLZtvwEACtbCuXUOEiylUqm4bdsLkgIfVxvtISJaljWZSqU2ccFhBqsAAOVy+SiX4bUYPDLGAu61hWQy+QFhU7ODEJEUCoWHbNseayHKb7Yzn88flR3SigDKjX1OGnwYxEA8xhim0+ldAACJRGLVLEBEFREV13W/KxvURi56nmd3GLvK0tLSI7ZtH7cs64LrutnaRGjkFRGZ53lLExMTtyEiCbOzvkSlUqm44zgZXIkplM5XzQTDMP547tw5tZWhyGeAYRg/6ICAOgnpdPoAAEAymQz1WJi+VCoVn56evqdUKv2YzyZhq4+IWK1WfyM7OtTQQqHwHfmmMHiet2xZ1sl8Pv+MWG4wPF4VQghkMpkveJ53jZPYKv4FfETEcrmcaGnsCsQyrRKyoj6RSMRc1y1KhAaI6Pu+H8zPz9+/Si5y74+Ojg67rjuLjR5Hy7L+bBjGY7ZtPzU9PX1wcnLy1jZGNcg8fPgwdV1XJKxV8zMEjJN89dChQ2orctvopKlUSrNt+19NOn1ERNu2LySTSYpyQhRsFAqFY/LFiMgYY0E2mz0Y5l1sn1XF94rneVe4zG4IuCxitVMC5LEYhvGHprHUz/P5/LP8WrWd9xlnbP7UqVNDfLAqZ69Tj4g1+zg3YK34F9cEhmH8XpbRgS7CbdMRkVYqledDdDJEZK7r5i9fvrwTEUk99vP5/Ldklvi6ipZl/bNbLwgkEgkFEUk2m91u23ZK9nAYgiCo/57NZh+WCeCOUrC2qtQPMZ2bdZdKpW+0IN1DRCyXyy82MGdZ1kXkyUImwDTNtyQDCPJlRBAiMS+MUpoOFRGVEydObKpWq3+TdYRAZOvfctl1GWuRffr06XgmkzkwMzPzxMzMzJPZbPZnLQhniBi4rjszPj4+BAAA2Wz2oHBC04XoOM78+fPnb8KQZSfsu3YoFosjLbxS1+26rjs2NnYH1kKu7tlkMknn5+c/WalUni0UCj8tFAo/KZfL35ybm7vPNM1f8KW7Y/i+78/Ozh5UAQCGhoa+yPUwABBsEwBARVG2a5q2mRBSTiQSsSNHjmx2XZf6vm8RQpYTiYR67NixfYSQ+wBgz+Dg4G5E1AGAEEJsy7Leo5SmK5XKG4SQWyXZYUAAgOHh4a2EkPcAADKZzL3Dw8Nf0nX9UUVR7laURs6Hh4eb7xc9gNDKlCOglNJ4PH47AQCwbXtU1/X7gyAIlEYNCADEsqxXAUBTFGUvpXQH1OpqKwiCCQDYouv63haKGrUGAVMUpV1SQwAgvu/nTNM8q+v6Ll3XP9N0jS+d1xsp3PRO81QAAEoul3uGjI+Pb9u7d+8lVVW3CgM6FNJsuOjKNN8vPKLwYz3woUa6Ihc8PSAAAFIqlZ5Rt2zZcichZDNALaG1UCAPTr5Abmetmai6AHKXipaXCgAQ0eABanarAFBU4/H4TkophVoPrZWHWk3bjttXXYKIUIlw0AC12egDgOY4zltjY2Ojiu/7Q1BjJLoG4saEaLZqlmWdyGazTzz44IOGGgRBFngi4cf6m4gbFwwAKGMsqFarz8Xj8RcAaiGvvPzyy2cNw3geVpKU307S/xjElKee52WWl5cfi8fjLyAiTSQSCiEE6yVuqVT6muu6S1JR0smDy0ZB0HSI3iAiIpqmeXZ6evoOgJXH/kaaeMV19erVD1er1V/7vi8qwnb9uw0Pz/PMcrn8Q+DJGkOeGYhMgthhyWazD2/evPmVgYGBu/jPIj/Iy6BcdVG4MbtMiIjEcZwCX8EQAFxCyLLneWcrlcqvduzYcQl5vzJs16m54UgAgBJC/HPnzt28f//+b+u6fkTTtNuvz3i6AgMAWiqVEm+++ebxeDw+YFmWn8vl3KeffroIPOvLjg1DqNfkm86fP3/T7t27D8VisQcURdmjadouxlgMEdOU0ncAYJBS+nVKaaydzCjBiyTiuu7UmTNnPvb44487IWNQYR17jbIAEhYzHA1LpWEYPxdhd53C20dEXFpaeorbqqH0uI7r6F2sSQSuPOuLPoCCiAOIqGYymW2e5+Wxs6ZnJIO3LOt1bke/qtG2aEieAACFQuH7iIiMsX7PAsYYw2vXrh26kQTUgVIn1rKsf8he6gNEZ/c1rntjVK3CkLm5uQ96npfF/hVSPiJiLpd7kuu9sd6XIYxZXFz8PN+V8XmTMxKIzU/HcS6NjIxoGGWiiwrIy0ypJR1lKIie/lFZ14YC8nzw0ksv6Y7jXMKIQkHsGruum7t48WK9eXOjxxsK5KGwsLDwqLC/VwKQ1xeGYRyXdWxYCAMty3qND6DXUGCIiEtLS5/D9gVa1+jXMkIQkVQqlZEIZCHU9heX33777Qv81bf1lbfXC7jyjtG2pm3q9UDsFv1dlh0V+pJJCSGItQ7zNdu2JwHgU9Bbyx00TcvwzwqsdKl7Rj8rKQUAwHGcOQCAIAh6aro6jlPgp5HOgOtRSkbSbWaMzUUhpxn9JCAAANB1/XYAgC62rZpBAABUVV2IyK4G9IUAHv+YSqW2Kooi2mo9EZDP5wUBke5f9KucpIjI8vn8Q5qm3Qy8fdWLQELIqq5PFOhXCCAhBAcHB78MABAEvS/bWNtyjxyRE8CnP5uYmLhNVdWHAQCU5k39LkUCAMTj8R3884ZfBSgAwM6dOx/RNG0YatO/F6MRAIAQsmOtC9eDfhCAAAC6rj8GjXsHPYFS+tEo5DQjUgLE9D958qSuquq9sPLuQC8gAACU0j38c2RVYORA3hpbWFjY4/t+VM1R0QsoXrlyZSvXE1keiDoERMv8Q5RSFaJ5aiMAEGiaFr/lllvEu0iR2d0XAjZt2iQSVlSPraKq3C/riQJ9qQNisdhQP+SqqnqAn0ZWDfalEnRddyAWi/kQ3csWAQD4lNK7AUBpt9nZLfoyAxRF2Qc1cmP8b6/HAACouq5/YnJy8k6A6DZFop4BDAAgFou9CgBjjDGklEZZuZGBgQGTn/+/v9R1fdCX3jqu/G9wP8Ai/Z/g9zv+Cyylt4hVG4llAAAAAElFTkSuQmCC" alt="" style="width:22px;height:auto;display:block;" />
+                  </div>
+                </div>
+              </div>
+              <div class="ph-cal">
+                <div class="ph-cal-row">
+                  <div class="ph-cal-day active"><span class="ph-cal-dn">ПН</span><span class="ph-cal-num">20</span>
+                    <svg class="ph-cal-flame" viewBox="0 0 24 28" fill="none"><path d="M12 1C12 6 6 8 6 15c0 4.5 3.2 8 8 8s8-3.2 8-7.5c0-3-1.5-5-3-6.5.3 2-.5 3.5-1.5 4-.5-4-3-6-3.5-9-1 1.5-2 3-2 6.5C11.5 12 9 11.5 9 8.5 9 5 11 2.5 12 1z" fill="#ff9500"/></svg>
+                  </div>
+                  <div class="ph-cal-day active"><span class="ph-cal-dn">ВТ</span><span class="ph-cal-num">21</span>
+                    <svg class="ph-cal-flame" viewBox="0 0 24 28" fill="none"><path d="M12 1C12 6 6 8 6 15c0 4.5 3.2 8 8 8s8-3.2 8-7.5c0-3-1.5-5-3-6.5.3 2-.5 3.5-1.5 4-.5-4-3-6-3.5-9-1 1.5-2 3-2 6.5C11.5 12 9 11.5 9 8.5 9 5 11 2.5 12 1z" fill="#ff9500"/></svg>
+                  </div>
+                  <div class="ph-cal-day active"><span class="ph-cal-dn">СР</span><span class="ph-cal-num">22</span>
+                    <svg class="ph-cal-flame" viewBox="0 0 24 28" fill="none"><path d="M12 1C12 6 6 8 6 15c0 4.5 3.2 8 8 8s8-3.2 8-7.5c0-3-1.5-5-3-6.5.3 2-.5 3.5-1.5 4-.5-4-3-6-3.5-9-1 1.5-2 3-2 6.5C11.5 12 9 11.5 9 8.5 9 5 11 2.5 12 1z" fill="#ff9500"/></svg>
+                  </div>
+                  <div class="ph-cal-day active"><span class="ph-cal-dn">ЧТ</span><span class="ph-cal-num">23</span>
+                    <svg class="ph-cal-flame" viewBox="0 0 24 28" fill="none"><path d="M12 1C12 6 6 8 6 15c0 4.5 3.2 8 8 8s8-3.2 8-7.5c0-3-1.5-5-3-6.5.3 2-.5 3.5-1.5 4-.5-4-3-6-3.5-9-1 1.5-2 3-2 6.5C11.5 12 9 11.5 9 8.5 9 5 11 2.5 12 1z" fill="#ff9500"/></svg>
+                  </div>
+                  <div class="ph-cal-day today active"><span class="ph-cal-dn">ПТ</span><span class="ph-cal-num">24</span>
+                    <svg class="ph-cal-flame" viewBox="0 0 24 28" fill="none"><path d="M12 1C12 6 6 8 6 15c0 4.5 3.2 8 8 8s8-3.2 8-7.5c0-3-1.5-5-3-6.5.3 2-.5 3.5-1.5 4-.5-4-3-6-3.5-9-1 1.5-2 3-2 6.5C11.5 12 9 11.5 9 8.5 9 5 11 2.5 12 1z" fill="#ff9500"/></svg>
+                  </div>
+                  <div class="ph-cal-day"><span class="ph-cal-dn">СБ</span><span class="ph-cal-num">25</span>
+                    <svg class="ph-cal-flame" viewBox="0 0 24 28" fill="none"><path d="M12 1C12 6 6 8 6 15c0 4.5 3.2 8 8 8s8-3.2 8-7.5c0-3-1.5-5-3-6.5.3 2-.5 3.5-1.5 4-.5-4-3-6-3.5-9-1 1.5-2 3-2 6.5C11.5 12 9 11.5 9 8.5 9 5 11 2.5 12 1z" fill="#ff9500"/></svg>
+                  </div>
+                  <div class="ph-cal-day"><span class="ph-cal-dn">ВС</span><span class="ph-cal-num">26</span>
+                    <svg class="ph-cal-flame" viewBox="0 0 24 28" fill="none"><path d="M12 1C12 6 6 8 6 15c0 4.5 3.2 8 8 8s8-3.2 8-7.5c0-3-1.5-5-3-6.5.3 2-.5 3.5-1.5 4-.5-4-3-6-3.5-9-1 1.5-2 3-2 6.5C11.5 12 9 11.5 9 8.5 9 5 11 2.5 12 1z" fill="#ff9500"/></svg>
+                  </div>
+                </div>
+              </div>
+              <div class="ph-workout">
+                <div class="ph-wk-top">
+                  <span class="ph-wk-lbl">План на сегодня</span>
+                  <div class="ph-wk-arr">
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="2.5" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+                  </div>
+                </div>
+                <div class="ph-wk-title">Силовая: Спина<br>+ Бицепс</div>
+                <div class="ph-wk-meta">
+                  <div class="ph-stars">
+                    <svg class="ph-star" viewBox="0 0 10 10"><polygon points="5,1 6.2,3.8 9.5,3.8 7,5.9 7.9,9 5,7.3 2.1,9 3,5.9 0.5,3.8 3.8,3.8" fill="#F5C518"/></svg>
+                    <svg class="ph-star" viewBox="0 0 10 10"><polygon points="5,1 6.2,3.8 9.5,3.8 7,5.9 7.9,9 5,7.3 2.1,9 3,5.9 0.5,3.8 3.8,3.8" fill="#F5C518"/></svg>
+                    <svg class="ph-star" viewBox="0 0 10 10"><polygon points="5,1 6.2,3.8 9.5,3.8 7,5.9 7.9,9 5,7.3 2.1,9 3,5.9 0.5,3.8 3.8,3.8" fill="#F5C518"/></svg>
+                    <svg class="ph-star" viewBox="0 0 10 10"><polygon points="5,1 6.2,3.8 9.5,3.8 7,5.9 7.9,9 5,7.3 2.1,9 3,5.9 0.5,3.8 3.8,3.8" fill="#F5C518"/></svg>
+                    <svg class="ph-star" viewBox="0 0 10 10"><polygon points="5,1 6.2,3.8 9.5,3.8 7,5.9 7.9,9 5,7.3 2.1,9 3,5.9 0.5,3.8 3.8,3.8" fill="#F5C518" opacity=".4"/></svg>
+                  </div>
+                  <div class="ph-wk-sep"></div>
+                  <div class="ph-wk-stat">
+                    <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.38)" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    <span class="ph-wk-stat-val">45</span><span class="ph-wk-stat-lbl">&nbsp;мин</span>
+                  </div>
+                  <div class="ph-wk-stat">
+                    <svg width="9" height="9" viewBox="0 0 24 24" fill="rgba(255,255,255,.38)"><path d="M12 2C9 7 10 11 8 13.5c-1.2 1.3-2 .5-2 .5s1 5.5 6 7c5-1.5 6-7 6-7s-.8.8-2-.5C14 11 15 7 12 2z"/></svg>
+                    <span class="ph-wk-stat-val">420</span><span class="ph-wk-stat-lbl">&nbsp;ккал</span>
+                  </div>
+                </div>
+                <div class="ph-wk-btn" id="phWkBtn">
+                  <div class="ph-wk-btn-ic">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="white">
+                      <rect x="1" y="9.5" width="2.6" height="5" rx="1"/>
+                      <rect x="4.2" y="7.5" width="2.8" height="9" rx="1.2"/>
+                      <rect x="7.5" y="10.7" width="9" height="2.6" rx="1"/>
+                      <rect x="17" y="7.5" width="2.8" height="9" rx="1.2"/>
+                      <rect x="20.4" y="9.5" width="2.6" height="5" rx="1"/>
+                    </svg>
+                  </div>
+                  <span class="ph-wk-btn-txt">Начать тренировку</span>
+                </div>
+                <div class="ph-wk-sub">Изменить под обстоятельства</div>
+              </div>
+              <div class="ph-scores">
+                <div class="ph-score" id="phScoreSleep">
+                  <div class="ph-score-top">
+                    <div class="ph-score-ic" style="background:#3949ab;">
+                      <svg width="11" height="11" viewBox="0 0 24 24" fill="white"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                    </div>
+                    <span class="ph-score-name">Сон</span>
+                    <div class="ph-score-dot"></div>
+                  </div>
+                  <div class="ph-ring-box">
+                    <div class="ph-ring">
+                      <svg viewBox="0 0 58 58">
+                        <circle cx="29" cy="29" r="23" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="5.5"/>
+                        <circle cx="29" cy="29" r="23" fill="none" stroke="#5c6bc0" stroke-width="5.5" stroke-dasharray="144.5" stroke-dashoffset="26" stroke-linecap="round"/>
+                      </svg>
+                      <div class="ph-ring-inner"><span class="ph-ring-n">81</span><span class="ph-ring-u">SCORE</span></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="ph-score" id="phScoreFood">
+                  <div class="ph-score-top">
+                    <div class="ph-score-ic" style="background:#2e7d32;">
+                      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round">
+                        <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><line x1="7" y1="2" x2="7" y2="22"/>
+                        <path d="M21 15V2a5 5 0 00-5 5v6h3v7"/>
+                      </svg>
+                    </div>
+                    <span class="ph-score-name">Питание</span>
+                    <div class="ph-score-dot"></div>
+                  </div>
+                  <div class="ph-ring-box">
+                    <div class="ph-ring">
+                      <svg viewBox="0 0 58 58">
+                        <circle cx="29" cy="29" r="23" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="5.5"/>
+                        <circle cx="29" cy="29" r="23" fill="none" stroke="#43a047" stroke-width="5.5" stroke-dasharray="144.5" stroke-dashoffset="8.7" stroke-linecap="round"/>
+                      </svg>
+                      <div class="ph-ring-inner"><span class="ph-ring-n">94</span><span class="ph-ring-u">SCORE</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="ph-age">
+                <div class="ph-age-top">
+                  <div class="ph-age-ic">
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  </div>
+                  <div>
+                    <div class="ph-age-title">Возраст тела</div>
+                    <div class="ph-age-sub">По сну и активности</div>
+                  </div>
+                  <div class="ph-score-dot"></div>
+                </div>
+                <div class="ph-age-body">
+                  <div class="ph-age-ring">
+                    <svg viewBox="0 0 64 64">
+                      <defs>
+                        <linearGradient id="phAgeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                          <stop offset="0%" stop-color="#d4589e"/>
+                          <stop offset="100%" stop-color="#5b9fd4"/>
+                        </linearGradient>
+                      </defs>
+                      <circle cx="32" cy="32" r="26" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="6"/>
+                      <circle class="ph-age-progress" cx="32" cy="32" r="26" fill="none" stroke="url(#phAgeGrad)" stroke-width="6" stroke-dasharray="163.4" stroke-dashoffset="46" stroke-linecap="round"/>
+                    </svg>
+                    <div class="ph-age-ring-inner">
+                      <span class="ph-age-num">27</span>
+                      <span class="ph-age-unit">лет</span>
+                    </div>
+                  </div>
+                  <div class="ph-age-info">
+                    <div class="ph-age-delta">
+                      <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#4caf50" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+                      На 3 года моложе паспортного
+                    </div>
+                    <div class="ph-age-desc">Стабильный сон и регулярная активность держат твой организм в хорошем темпе</div>
+                  </div>
+                </div>
+              </div>
+              <div class="ph-ai">
+                <div class="ph-ai-top">
+                  <div class="ph-ai-ic">
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="ph-ai-title">Спортивная база данных</div>
+                    <div class="ph-ai-sub">AI-Sofit-Collider&trade;</div>
+                  </div>
+                </div>
+                <div class="ph-ai-search">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ph-ai-search-ic">
+                    <circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                  </svg>
+                  <span class="ph-ai-search-text" id="phAiSearchText"></span>
+                  <span class="ph-ai-caret"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ph-nav">
+            <div class="ph-nav-it">
+              <div class="ph-nav-ic">
+                <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="1.8" stroke-linecap="round">
+                  <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><line x1="7" y1="2" x2="7" y2="22"/>
+                  <path d="M21 15V2a5 5 0 00-5 5v6h3v7"/>
+                </svg>
+              </div>
+              <span class="ph-nav-lbl">Питание</span>
+            </div>
+            <div class="ph-nav-it">
+              <div class="ph-nav-ic">
+                <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="1.8" stroke-linecap="round">
+                  <path d="M6.5 6.5h11M6.5 17.5h11M3 12h18M7 4v4M17 4v4M7 16v4M17 16v4"/>
+                </svg>
+              </div>
+              <span class="ph-nav-lbl">Тренировки</span>
+            </div>
+            <div class="ph-nav-it">
+              <div class="ph-nav-home">
+                <svg viewBox="0 0 24 24" fill="white"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+              </div>
+            </div>
+            <div class="ph-nav-it">
+              <div class="ph-nav-ic">
+                <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="1.8" stroke-linecap="round">
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                </svg>
+              </div>
+              <span class="ph-nav-lbl">Статистика</span>
+            </div>
+            <div class="ph-nav-it">
+              <div class="ph-nav-ic">
+                <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="1.8" stroke-linecap="round">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                </svg>
+              </div>
+              <span class="ph-nav-lbl">AI Коуч</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ph-glow"></div>
+    </div>
+  </div>
+</section>
+
+<section id="reality">
+  <div class="rl-top reveal">
+    <span class="sec-lbl">01 — Реальность</span>
+    <h2>Почему 9 из 10 бросают зал<br>через 2 месяца?</h2>
+  </div>
+  <div class="rl-cols">
+    <div class="rl-col reveal">
+      <div class="rl-ct">Эффект плато</div>
+      <div class="rl-cd">Организм привыкает к нагрузке быстрее, чем твой тренер обновляет программу. Результат замирает на одной точке.</div>
+    </div>
+    <div class="rl-col reveal">
+      <div class="rl-ct">Кортизоловая яма</div>
+      <div class="rl-cd">Тренировка на фоне недосыпа убивает иммунитет и ЦНС. Вместо прогресса ты получаешь истощение.</div>
+    </div>
+    <div class="rl-col reveal">
+      <div class="rl-ct">Арифметика вместо жизни</div>
+      <div class="rl-cd">Считать каждый грамм и ловить БЖУ — это работа, а не стиль жизни. Мы берем рутину на свои плечи.</div>
+    </div>
+  </div>
+  <div class="rl-cols-2">
+    <div class="rl-col reveal">
+      <div class="rl-ct">Нет индивидуального подхода</div>
+      <div class="rl-cd">Универсальные программы не учитывают особенности твоего тела, режима и целей. То, что работает для других — не работает для тебя.</div>
+    </div>
+    <div class="rl-col reveal">
+      <div class="rl-ct">Тренерская проблема</div>
+      <div class="rl-cd">Предвзятость и некомпетентность личного тренера является избитой проблемой фитнеса, где у каждого своё мнение и непонятное видение.</div>
+    </div>
+  </div>
+</section>
+
+<section id="solution">
+  <div class="sol-grid">
+    <div class="sol-l reveal">
+      <span class="sec-lbl">02 — Решение</span>
+      <h2 class="sol-h">Проверь, как наше<br>приложение спасет<br>твою тренировку.</h2>
+      <div class="sl-row">
+        <div class="sl-top"><span class="sl-name">Качество сна</span><span class="sl-val" id="v1">7ч</span></div>
+        <input type="range" min="3" max="10" step="1" value="7" id="s1" oninput="upd()">
+      </div>
+      <div class="sl-row">
+        <div class="sl-top"><span class="sl-name">Уровень стресса</span><span class="sl-val" id="v2">0%</span></div>
+        <input type="range" min="0" max="100" step="1" value="0" id="s2" oninput="upd()">
+      </div>
+      <div class="sl-row">
+        <div class="sl-top"><span class="sl-name">Питание</span><span class="sl-val" id="v3">100%</span></div>
+        <input type="range" min="0" max="100" step="1" value="100" id="s3" oninput="upd()">
+      </div>
+      <div class="state-wrap">
+        <div class="state-lbl">Состояние организма:</div>
+        <div class="state-bar">
+          <div class="state-seg s1" id="sg1"></div>
+          <div class="state-seg s2" id="sg2"></div>
+          <div class="state-seg s3" id="sg3"></div>
+          <div class="state-seg s4" id="sg4"></div>
+        </div>
+        <div class="state-labels"><span>Критическое</span><span>Внимание</span><span>Нормальное</span><span>Отличное</span></div>
+      </div>
+    </div>
+    <div class="sol-r reveal">
+      <div class="ac" id="acard">
+        <div class="ac-top-row">
+          <div class="ac-icon-wrap" id="aiwrap">
+            <svg id="aicon-svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg>
+          </div>
+          <div class="ac-title-col">
+            <div class="ac-sys">Системный анализ</div>
+            <div class="ac-name" id="aname">ОПТИМАЛЬНО</div>
+          </div>
+        </div>
+        <div class="ac-desc" id="adesc">Все параметры в зелёной зоне. Тренируйся смело.</div>
+        <div class="ac-proto">Протокол адаптации:</div>
+        <div class="ac-items" id="aitems"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="comparison">
+  <div class="reveal">
+    <span class="sec-lbl">03 — Сравнение</span>
+    <h2 class="comp-h">Эволюция фитнеса</h2>
+  </div>
+  <div class="reveal">
+  <table class="comp-tbl">
+    <thead>
+      <tr>
+        <th>Характеристика</th>
+        <th>PDF-программа</th>
+        <th>Личный тренер</th>
+        <th class="th-s">Sofit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>План тренировок</td>
+        <td><div class="cx"><span class="cx-x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span><span>Статичный</span></div></td>
+        <td><div class="cx"><span class="cx-x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span><span>Мануальный</span></div></td>
+        <td class="td-s"><div class="ck"><span class="ck-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span>Генерируется ежедневно</div></td>
+      </tr>
+      <tr>
+        <td>При недосыпе</td>
+        <td><div class="cx"><span class="cx-x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span><span>Риск травмы</span></div></td>
+        <td><div class="cx"><span class="cx-x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span><span>Доп. плата за адаптацию</span></div></td>
+        <td class="td-s"><div class="ck"><span class="ck-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span>Авто-корректировка</div></td>
+      </tr>
+      <tr>
+        <td>Оборудование</td>
+        <td><div class="cx"><span class="cx-x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span><span>Только зал</span></div></td>
+        <td><div class="cx"><span class="cx-x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span><span>Только зал</span></div></td>
+        <td class="td-s"><div class="ck"><span class="ck-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span>Любое (Дом/Улица)</div></td>
+      </tr>
+      <tr>
+        <td>Цена за месяц</td>
+        <td><div class="cx"><span class="cx-x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span><span>100 BYN</span></div></td>
+        <td><div class="cx"><span class="cx-x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span><span>500+ BYN</span></div></td>
+        <td class="td-s"><div class="ck"><span class="ck-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span>Как два занятия у тренера</div></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section id="system">
+  <div class="reveal" style="margin-bottom:40px;">
+    <span class="sec-lbl">04 — Система</span>
+  </div>
+  <div class="sys-hdr reveal">
+    <h2>СИСТЕМА SOFIT</h2>
+    <div class="sys-sub">Интеллектуальное ядро трансформации</div>
+  </div>
+  <div class="carousel reveal">
+    <button class="car-btn prev" onclick="carPrev()">‹</button>
+    <div class="car-inner" id="carInner"></div>
+    <button class="car-btn next" onclick="carNext()">›</button>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="faq-top reveal">
+    <span class="sec-lbl">05 — Вопросы</span>
+    <h2>Часто задаваемые вопросы</h2>
+  </div>
+  <div id="faqList"></div>
+</section>
+
+<section id="contact">
+  <div class="con-inner reveal">
+    <span class="con-lbl">06 — Контакт</span>
+    <h2 class="con-title">Стань первым, кто попробует будущее фитнеса</h2>
+    <span class="con-form-lbl">Запись на бета-тест</span>
+    <div class="con-row">
+      <input type="text" class="con-input" id="conVal"
+        placeholder="Email или Telegram (@username)"
+        autocomplete="off" maxlength="120">
+      <button class="con-btn" id="conBtn" onclick="sendCon()">Получить доступ</button>
+    </div>
+    <div class="con-err" id="conErr">
+      <span class="msg-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+      <span id="conErrText"></span>
+    </div>
+    <div class="con-ok" id="conOk">
+      <span class="msg-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span>
+      <span>Отлично! Мы скоро свяжемся с тобой.</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="ft-l">
+    <span class="ft-logo">SOFIT</span>
+    <span class="ft-copy">© 2026 Sofit. Все права защищены.</span>
+  </div>
+  <div class="ft-links">
+    <a href="https://www.linkedin.com/in/ivan-poukh-401a323a7/" target="_blank" rel="noopener noreferrer" class="ft-a">LinkedIn</a>
+    <a href="mailto:sofitbetatest@gmail.com" class="ft-a">Контакт</a>
+    <a href="#privacy" class="ft-a" onclick="showPrivacy(event)">Конфиденциальность</a>
+    <a href="#terms" class="ft-a" onclick="showTerms(event)">Условия</a>
+  </div>
+</footer>
+
+<div id="cookie-banner" role="alert">
+  <button id="cookie-close" onclick="dismissCookieBanner()" aria-label="Закрыть">×</button>
+  <div id="cookie-banner-short">
+    <span>Мы используем файлы cookie, чтобы сайт работал лучше.
+      <button id="cookie-toggle" onclick="toggleCookieDetail()">Подробнее <span id="cookie-arrow">∨</span></button>
+    </span>
+  </div>
+  <div id="cookie-detail">
+    Мы используем файлы cookie, чтобы сайт работал лучше, был удобнее и эффективнее, а также для сбора статистики посещений и поведения на сайте с помощью Google Analytics и Яндекс Метрики. Продолжая пользоваться сайтом, вы выражаете согласие с политикой конфиденциальности и условиями Sofit на их обработку.
+  </div>
+  <button id="cookie-accept" onclick="acceptCookies()">Принять</button>
+</div>
+
+<div id="modal-privacy" class="modal-overlay" style="display:none;position:fixed;inset:0;z-index:9998;background:rgba(26,26,46,0);overflow-y:auto;transition:background .3s ease;">
+  <div class="modal-box" style="max-width:680px;margin:60px auto;background:#f7f5f2;border-radius:12px;padding:48px;position:relative;opacity:0;transform:translateY(40px) scale(.97);transition:opacity .35s ease,transform .35s ease;">
+    <button onclick="closeModal('modal-privacy')" style="position:absolute;top:20px;right:20px;background:none;border:none;font-size:22px;cursor:pointer;color:#1a1a2e;">×</button>
+    <h2 style="font-size:24px;font-weight:900;margin-bottom:24px;color:#1a1a2e;">Политика конфиденциальности</h2>
+    <div style="font-size:14px;line-height:1.8;color:rgba(26,26,46,.65);">
+      <p style="margin-bottom:16px;"><strong style="color:#1a1a2e;">Последнее обновление: 2026 г.</strong></p>
+      <p style="margin-bottom:12px;">Sofit («мы», «нас») уважает вашу конфиденциальность. Настоящая политика описывает, какие данные мы собираем и как их используем.</p>
+      <h3 style="font-size:15px;font-weight:700;color:#1a1a2e;margin:20px 0 8px;">Какие данные мы собираем</h3>
+      <p style="margin-bottom:12px;">При регистрации на бета-тест мы собираем ваш email-адрес или Telegram-псевдоним. Эти данные используются исключительно для связи с вами в рамках бета-программы.</p>
+      <h3 style="font-size:15px;font-weight:700;color:#1a1a2e;margin:20px 0 8px;">Как мы используем данные</h3>
+      <p style="margin-bottom:12px;">Ваши контактные данные не передаются третьим лицам и не используются в рекламных целях. Мы используем их только для отправки информации о статусе бета-тестирования.</p>
+      <h3 style="font-size:15px;font-weight:700;color:#1a1a2e;margin:20px 0 8px;">Аналитика</h3>
+      <p style="margin-bottom:12px;">Сайт использует cookies и сервисы веб-аналитики Google Analytics 4 и Яндекс.Метрика для анализа посещаемости и улучшения сайта, и пользовательского опыта.</p>
+      <h3 style="font-size:15px;font-weight:700;color:#1a1a2e;margin:20px 0 8px;">Ваши права</h3>
+      <p style="margin-bottom:12px;">Вы можете запросить удаление ваших данных в любое время, написав на <a href="mailto:sofitbetatest@gmail.com" style="color:#d4589e;">sofitbetatest@gmail.com</a>.</p>
+      <h3 style="font-size:15px;font-weight:700;color:#1a1a2e;margin:20px 0 8px;">Контакт</h3>
+      <p>По вопросам конфиденциальности: <a href="mailto:sofitbetatest@gmail.com" style="color:#d4589e;">sofitbetatest@gmail.com</a></p>
+    </div>
+  </div>
+</div>
+
+<div id="modal-terms" class="modal-overlay" style="display:none;position:fixed;inset:0;z-index:9998;background:rgba(26,26,46,0);overflow-y:auto;transition:background .3s ease;">
+  <div class="modal-box" style="max-width:680px;margin:60px auto;background:#f7f5f2;border-radius:12px;padding:48px;position:relative;opacity:0;transform:translateY(40px) scale(.97);transition:opacity .35s ease,transform .35s ease;">
+    <button onclick="closeModal('modal-terms')" style="position:absolute;top:20px;right:20px;background:none;border:none;font-size:22px;cursor:pointer;color:#1a1a2e;">×</button>
+    <h2 style="font-size:24px;font-weight:900;margin-bottom:24px;color:#1a1a2e;">Условия использования</h2>
+    <div style="font-size:14px;line-height:1.8;color:rgba(26,26,46,.65);">
+      <p style="margin-bottom:16px;"><strong style="color:#1a1a2e;">Последнее обновление: 2026 г.</strong></p>
+      <p style="margin-bottom:12px;">Используя сайт sofit.app, вы принимаете настоящие условия. Если вы не согласны с ними — пожалуйста, не используйте сайт.</p>
+      <h3 style="font-size:15px;font-weight:700;color:#1a1a2e;margin:20px 0 8px;">Бета-тестирование</h3>
+      <p style="margin-bottom:12px;">Приложение Sofit находится на стадии бета-тестирования. Функциональность может изменяться. Мы не несём ответственности за ущерб, связанный с использованием бета-версии продукта.</p>
+      <h3 style="font-size:15px;font-weight:700;color:#1a1a2e;margin:20px 0 8px;">Медицинская оговорка</h3>
+      <p style="margin-bottom:12px;">Sofit предоставляет информационные рекомендации и не является медицинским устройством. Перед началом тренировочной программы проконсультируйтесь с врачом.</p>
+      <h3 style="font-size:15px;font-weight:700;color:#1a1a2e;margin:20px 0 8px;">Интеллектуальная собственность</h3>
+      <p style="margin-bottom:12px;">Весь контент сайта, включая тексты, графику и алгоритмы, является собственностью Sofit и защищён авторским правом.</p>
+      <h3 style="font-size:15px;font-weight:700;color:#1a1a2e;margin:20px 0 8px;">Контакт</h3>
+      <p>По вопросам: <a href="mailto:sofitbetatest@gmail.com" style="color:#d4589e;">sofitbetatest@gmail.com</a></p>
+    </div>
+  </div>
+</div>
+
+<script>
+const ro = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); }), {threshold:.08});
+document.querySelectorAll('.reveal').forEach(e => ro.observe(e));
+
+const SVGS = {
+  cancel:   `<path d="M18 6L6 18M6 6l12 12"/>`,
+  water:    `<path d="M12 2C6 10 6 14 12 22c6-8 6-12 0-20z"/>`,
+  sleep:    `<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="currentColor" stroke="none"/>`,
+  hospital: `<rect x="3" y="3" width="18" height="18" rx="2"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/>`,
+  bread:    `<path d="M3 11C3 7.13 7.03 4 12 4s9 3.13 9 7v9H3v-9z"/><line x1="3" y1="11" x2="21" y2="11"/>`,
+  protein:  `<path d="M6.5 6.5h11M6.5 17.5h11M3 12h18M7 4v4M17 4v4M7 16v4M17 16v4"/>`,
+  coffee:   `<path d="M17 8h1a4 4 0 010 8h-1"/><path d="M3 8h14v9a4 4 0 01-4 4H7a4 4 0 01-4-4V8z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/>`,
+  siesta:   `<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="currentColor" stroke="none"/>`,
+  down:     `<polyline points="7 10 12 15 17 10"/>`,
+  trophy:   `<path d="M6 9H4a2 2 0 000 4h2"/><path d="M18 9h2a2 2 0 010 4h-2"/><path d="M6 9V4h12v5a6 6 0 01-12 0z"/><line x1="12" y1="15" x2="12" y2="19"/><line x1="8" y1="19" x2="16" y2="19"/>`,
+  plus:     `<line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>`,
+  hiit:     `<polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>`,
+  plan:     `<rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>`,
+  cardio:   `<polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>`,
+  muscle:   `<path d="M6.5 6.5h11M6.5 17.5h11M3 12h18M7 4v4M17 4v4M7 16v4M17 16v4"/>`,
+  scales:   `<path d="M16 16l3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1z"/><path d="M2 16l3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1z"/><line x1="7" y1="21" x2="17" y2="21"/><line x1="12" y1="3" x2="12" y2="21"/><line x1="3" y1="3" x2="21" y2="3"/>`,
+  highRep:  `<path d="M6.5 6.5h11M6.5 17.5h11M3 12h18M7 4v4M17 4v4M7 16v4M17 16v4"/>`,
+  liss:     `<polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>`,
+  meat:     `<path d="M18.09 9.37c.9-1.03.89-2.6-.04-3.62a2.74 2.74 0 00-3.93 0L12 8l-2.12-2.25a2.74 2.74 0 00-3.93 0c-.93 1.02-.94 2.59-.04 3.62L12 16l6.09-6.63z"/>`,
+  stretch:  `<path d="M12 22V12"/><path d="M7 7l5 5 5-5"/><circle cx="12" cy="5" r="3"/>`,
+  isolate:  `<path d="M6.5 6.5h11M6.5 17.5h11M3 12h18M7 4v4M17 4v4M7 16v4M17 16v4"/>`,
+  herb:     `<path d="M2 22c1-1 2-4 6-6 0 4-1 6-6 6z"/><path d="M22 2C11 2 4 11 4 17c3-1 7-4 10-9-3 5-5 9-5 13 3-1 5-3 7-7-2 4-2 7 0 10 0-4 2-7 6-10z"/>`,
+  meditate: `<circle cx="12" cy="8" r="4"/><path d="M6 20v-2a4 4 0 014-4h4a4 4 0 014 4v2"/>`,
+  record:   `<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>`,
+  walk:     `<circle cx="12" cy="5" r="2"/><path d="M9 20l1-6 2 3 2-3 1 6"/><path d="M7 10l2-3h6l2 3"/>`,
+  bcaa:     `<path d="M3 11C3 7.13 7.03 4 12 4s9 3.13 9 7v9H3v-9z"/><line x1="3" y1="11" x2="21" y2="11"/><line x1="9" y1="11" x2="9" y2="20"/><line x1="15" y1="11" x2="15" y2="20"/>`,
+  calorie:  `<line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>`,
+  reduce:   `<line x1="5" y1="12" x2="19" y2="12"/>`,
+  electro:  `<polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>`,
+  bench:    `<path d="M6.5 6.5h11M6.5 17.5h11M3 12h18M7 4v4M17 4v4M7 16v4M17 16v4"/><circle cx="12" cy="12" r="2" fill="currentColor"/>`,
+  muscle2:  `<path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/>`,
+  food5:    `<path d="M3 11C3 7.13 7.03 4 12 4s9 3.13 9 7v9H3v-9z"/><line x1="3" y1="11" x2="21" y2="11"/>`,
+  restday:  `<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="currentColor" stroke="none"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>`,
+  light:    `<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>`,
+  bench5x5: `<path d="M6.5 6.5h11M6.5 17.5h11M3 12h18M7 4v4M17 4v4M7 16v4M17 16v4"/>`,
+  muscle3:  `<path d="M9 12h6M9 16h6M13 2l4 4-4 4"/><path d="M15 6H7a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2V9l-4-3z"/>`,
+  alert:    `<circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>`,
+  utensils: `<path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><line x1="7" y1="2" x2="7" y2="22"/><path d="M21 15V2a5 5 0 00-5 5v6h3v7"/>`,
+  jar:      `<rect x="6" y="8" width="12" height="13" rx="2"/><rect x="8" y="3" width="8" height="5" rx="1"/>`,
+  bottle:   `<path d="M9 2h6v3l1.5 2v14a1 1 0 01-1 1H8.5a1 1 0 01-1-1V7L9 5V2z"/><line x1="8" y1="11" x2="16" y2="11"/>`,
+  capsule:  `<rect x="2.5" y="8.5" width="19" height="7" rx="3.5" transform="rotate(45 12 12)"/><line x1="8.5" y1="15.5" x2="15.5" y2="8.5"/>`,
+  bicep:    `<path d="M7 21v-6c0-1.2.5-2 1.4-2.7C7.5 11 7 9.3 8 7.8 9 6.3 11 5.8 12.4 6.8c1.3 1 1.5 2.7.6 4-.6.8-.6 1.7 0 2.3.9.9 2 2.4 2 4.2V21"/><path d="M9.5 10c1 .8 3 .8 4 0"/>`,
+  barbell:  `<line x1="6" y1="12" x2="18" y2="12"/><rect x="1" y="8" width="3" height="8" rx="1"/><rect x="20" y="8" width="3" height="8" rx="1"/><rect x="4" y="6" width="2" height="12" rx="1"/><rect x="18" y="6" width="2" height="12" rx="1"/>`,
+  gantel:   `<circle cx="5" cy="12" r="3"/><circle cx="19" cy="12" r="3"/><line x1="8" y1="12" x2="16" y2="12"/>`,
+  shield:   `<path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/>`,
+  personup: `<circle cx="12" cy="4" r="2"/><path d="M12 8v8"/><path d="M12 8l-5-4"/><path d="M12 8l5-4"/><path d="M12 16l-3 6"/><path d="M12 16l3 6"/>`,
+  shoe:     `<path d="M3 18c0-2 1-3 3-4l5-2c1-.4 2-1 2-2V6c0-1.1.9-2 2-2h1a3 3 0 013 3v7c0 2-2 4-5 4H5c-1.1 0-2-.9-2-2z"/>`,
+  refresh:  `<path d="M21 12a9 9 0 11-3-6.7"/><polyline points="21 3 21 9 15 9"/>`,
+  flame:    `<path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/>`,
+  exhaust:  `<circle cx="9" cy="4" r="2"/><path d="M9 6v8"/><path d="M6 10l3-2 3 2"/><path d="M6 20l3-6 3 6"/><line x1="18" y1="6" x2="18" y2="16"/><polyline points="15 13 18 16 21 13"/>`,
+};
+
+const STATES = [
+
+  {
+    test:(sl,st,fd)=>sl<=3&&st>=90, name:'ЭКСТРЕННЫЙ РЕЖИМ', color:'#e53935', bg:'rgba(229,57,53,.15)', level:0,
+    icon:'alert', desc:'3 часа сна + 90% стресса = катастрофа. Организм в шоке.',
+    items:[{ic:'cancel',t:'Отмена тренировки'},{ic:'water',t:'Электролиты + вода'},{ic:'sleep',t:'Сон 10+ часов'},{ic:'hospital',t:'Вызов врача'}],
+    blink:'danger'
+  },
+  {
+    test:(sl,st,fd)=>sl<=4&&st>=80, name:'ВЫГОРАНИЕ', color:'#ff5722', bg:'rgba(255,87,34,.15)', level:0,
+    icon:'flame', desc:'Стресс зашкаливает, сон в дефиците. Система на грани.',
+    items:[{ic:'hiit',t:'Магний + B6 срочно'},{ic:'refresh',t:'Дыхательная практика'},{ic:'sleep',t:'Йога 20 минут'},{ic:'cardio',t:'Отдых 48 часов'}],
+    blink:'danger'
+  },
+  {
+    test:(sl,st,fd)=>sl<=3&&fd<=10, name:'ГОЛОДНЫЙ КРИЗИС', color:'#e53935', bg:'rgba(229,57,53,.15)', level:0,
+    icon:'alert', desc:'Нет сна, нет еды. Мышцы горят, мозг отключается.',
+    items:[{ic:'utensils',t:'Быстрые углеводы'},{ic:'jar',t:'Протеин 40г'},{ic:'bottle',t:'Вода 1.5л'},{ic:'sleep',t:'Сон сию секунду'}],
+    blink:'danger'
+  },
+  {
+    test:(sl,st,fd)=>sl===4&&fd<=10&&st<=15, name:'ГОЛОДАНИЕ', color:'#bf8040', bg:'rgba(191,128,64,.13)', level:0,
+    icon:'utensils', desc:'Спать нечего, есть нечего. Организм в панике.',
+    items:[{ic:'utensils',t:'Протеин + углеводы'},{ic:'electro',t:'Электролиты'},{ic:'sleep',t:'Сон прежде всего'}],
+    blink:'danger'
+  },
+
+  {
+    test:(sl,st,fd)=>sl<=5&&st>=60&&fd<=35, name:'ИСТОЩЕНИЕ', color:'#f57c00', bg:'rgba(245,124,0,.13)', level:1,
+    icon:'exhaust', desc:'Всё плохо сразу: недосып, стресс, недоедание.',
+    items:[{ic:'restday',t:'День полного отдыха'},{ic:'food5',t:'Питание 5 раз'},{ic:'walk',t:'Прогулка 30 мин'}],
+    blink:null
+  },
+  {
+    test:(sl,st,fd)=>st>=80&&fd<=20, name:'ТРЕВОЖНОСТЬ', color:'#e53935', bg:'rgba(229,57,53,.15)', level:1,
+    icon:'alert', desc:'Стресс + плохое питание = нервный срыв.',
+    items:[{ic:'utensils',t:'L-теанин + магний'},{ic:'meditate',t:'Медитация'},{ic:'coffee',t:'Исключить кофеин'}],
+    blink:null
+  },
+  {
+    test:(sl,st,fd)=>sl<=4, name:'НЕДОСЫП', color:'#e53935', bg:'rgba(229,57,53,.15)', level:1,
+    icon:'sleep', desc:'Мало сна = мало энергии. Тестостерон падает.',
+    items:[{ic:'siesta',t:'Сиеста 30 минут'},{ic:'coffee',t:'Кофеин только утром'},{ic:'down',t:'Снизить веса'}],
+    blink:null
+  },
+  {
+    test:(sl,st,fd)=>fd<=25&&st<=25&&sl>=5, name:'НЕДОЕДАНИЕ', color:'#f57c00', bg:'rgba(245,124,0,.13)', level:1,
+    icon:'utensils', desc:'Мало питательных веществ. Сила падает.',
+    items:[{ic:'capsule',t:'БЦАА перед тренировкой'},{ic:'calorie',t:'Увеличить калории'},{ic:'reduce',t:'Снизить нагрузку'}],
+    blink:null
+  },
+
+  {
+    test:(sl,st,fd)=>sl>=9&&fd>=80&&st<=20, name:'СУПЕРЧЕЛОВЕК', color:'#4caf50', bg:'rgba(76,175,80,.15)', level:3,
+    icon:'hiit', desc:'9+ часов сна, стресс 20%, питание 85% — идеал!',
+    items:[{ic:'bicep',t:'Личный рекорд сегодня'},{ic:'plus',t:'Добавить 5% веса'},{ic:'hiit',t:'HIIT максимум'}],
+    blink:'super'
+  },
+  {
+    test:(sl,st,fd)=>sl>=9&&st<=15&&fd>=50&&fd<80, name:'ПИК ФОРМЫ', color:'#00bcd4', bg:'rgba(0,188,212,.13)', level:3,
+    icon:'hiit', desc:'Отлично выспался, спокоен, хорошо питаешься.',
+    items:[{ic:'barbell',t:'Жим лежа (5x5)'},{ic:'hiit',t:'HIIT Кардио (20 мин)'},{ic:'bicep',t:'Добивка мышц'}],
+    blink:'super'
+  },
+  {
+    test:(sl,st,fd)=>sl>=9&&st<=20&&fd>=40&&fd<80, name:'АКТИВНЫЙ', color:'#69c06d', bg:'rgba(105,192,109,.13)', level:3,
+    icon:'cardio', desc:'Отличный сон и спокойствие дают энергию. Питание подтянуть — и будет максимум.',
+    items:[{ic:'walk',t:'Прогулка 10к шагов'},{ic:'bottle',t:'Вода +1л'},{ic:'meditate',t:'Медитация'}],
+    blink:null
+  },
+  {
+    test:(sl,st,fd)=>sl>=9&&fd>=20&&fd<50&&st<=50, name:'СУШКА', color:'#8bc34a', bg:'rgba(139,195,74,.12)', level:3,
+    icon:'scales', desc:'Выспался, но мало калорий. Фокус на рельеф.',
+    items:[{ic:'gantel',t:'Высокоповторный тренинг'},{ic:'liss',t:'LISS кардио 45 мин'},{ic:'meat',t:'Сохранение белка'}],
+    blink:null
+  },
+  {
+    test:(sl,st,fd)=>sl>=8&&fd>=70&&st<=30, name:'ОПТИМАЛЬНО', color:'#4caf50', bg:'rgba(76,175,80,.15)', level:3,
+    icon:'plan', desc:'Все параметры в зелёной зоне. Тренируйся смело.',
+    items:[{ic:'plan',t:'Программа по плану'},{ic:'cardio',t:'Кардио умеренное'},{ic:'gantel',t:'Гипертрофия'}],
+    blink:null
+  },
+
+  {
+    test:(sl,st,fd)=>st>=60&&fd>=70, name:'ПОДДЕРЖКА', color:'#f5a623', bg:'rgba(245,166,35,.12)', level:2,
+    icon:'cardio', desc:'Ресурс ограничен. Работаем на технику.',
+    items:[{ic:'liss',t:'Кардио LISS (40 мин)'},{ic:'personup',t:'Растяжка'},{ic:'gantel',t:'Изоляция (легкий вес)'}],
+    blink:null
+  },
+  {
+    test:(sl,st,fd)=>sl>=6&&sl<=7&&st>=30&&st<=60&&fd<=40, name:'БАЛАНС', color:'#42a5f5', bg:'rgba(66,165,245,.13)', level:2,
+    icon:'scales', desc:'Немного недосыпа, но в целом нормально.',
+    items:[{ic:'shoe',t:'Легкая активность'},{ic:'personup',t:'Растяжка'},{ic:'sleep',t:'Сон +30 минут'}],
+    blink:null
+  },
+  {
+    test:(sl,st,fd)=>sl>=6&&fd>=60, name:'СТАБИЛЬНО', color:'#7c4dff', bg:'rgba(124,77,255,.12)', level:2,
+    icon:'muscle', desc:'Все параметры в норме. Ничего не угрожает.',
+    items:[{ic:'gantel',t:'Тренировка 80%'},{ic:'cardio',t:'Умеренное кардио'},{ic:'shield',t:'Фокус на технике'}],
+    blink:null
+  },
+
+  {
+    test:()=>true, name:'НЕДОСЫП', color:'#e53935', bg:'rgba(229,57,53,.15)', level:1,
+    icon:'sleep', desc:'Мало сна = мало энергии. Тестостерон падает.',
+    items:[{ic:'siesta',t:'Сиеста 30 минут'},{ic:'coffee',t:'Кофеин только утром'},{ic:'down',t:'Снизить веса'}],
+    blink:null
+  }
+];
+
+let lastState = null;
+function upd() {
+  const sl=+document.getElementById('s1').value, st=+document.getElementById('s2').value, fd=+document.getElementById('s3').value;
+  document.getElementById('v1').textContent=sl+'ч';
+  document.getElementById('v2').textContent=st+'%';
+  document.getElementById('v3').textContent=fd+'%';
+  const S = STATES.find(s=>s.test(sl,st,fd));
+  if(S === lastState) return;
+  lastState = S;
+
+  const card=document.getElementById('acard');
+  card.classList.remove('blink-danger','blink-super','ac-fade-out','ac-fade-in');
+  void card.offsetWidth;
+  card.classList.add('ac-fade-out');
+
+  setTimeout(()=>{
+    card.style.borderColor=S.color+'55';
+
+    const iw=document.getElementById('aiwrap');
+    iw.style.background=S.bg;
+    iw.style.color=S.color;
+    document.getElementById('aicon-svg').innerHTML=SVGS[S.icon]||'';
+    document.getElementById('aicon-svg').style.stroke=S.color;
+
+    document.getElementById('aname').textContent=S.name;
+    document.getElementById('aname').style.color=S.color;
+    document.getElementById('adesc').textContent=S.desc;
+
+    document.getElementById('aitems').innerHTML=S.items.map(it=>`
+      <div class="ac-item">
+        <div class="ac-item-ic" style="background:${S.bg};color:${S.color}">
+          <svg viewBox="0 0 24 24" fill="none" stroke="${S.color}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${SVGS[it.ic]||''}</svg>
+        </div>
+        <div class="ac-item-t" style="color:${S.color}">${it.t}</div>
+      </div>`).join('');
+
+    ['sg1','sg2','sg3','sg4'].forEach((id,i)=>{
+      document.getElementById(id).style.opacity=i===S.level?'1':'0.15';
+    });
+
+    card.classList.remove('ac-fade-out');
+    void card.offsetWidth;
+    card.classList.add('ac-fade-in');
+
+    setTimeout(()=>{
+      if(S.blink==='danger') card.classList.add('blink-danger');
+      if(S.blink==='super')  card.classList.add('blink-super');
+    }, 450);
+  }, 250);
+}
+upd();
+
+const CARD_SVGS = {
+  food:     `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><line x1="7" y1="2" x2="7" y2="22"/><path d="M21 15V2a5 5 0 00-5 5v6h3v7"/></svg>`,
+  dumbbell: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 10v4"/><path d="M4 8v8"/><path d="M6.5 6v12"/><path d="M17.5 6v12"/><path d="M20 8v8"/><path d="M22 10v4"/><path d="M6.5 12h11"/></svg>`,
+  bolt:     `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>`,
+  pulse:    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>`,
+  robot:    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="8" width="18" height="13" rx="2"/><circle cx="9" cy="13" r="2"/><circle cx="15" cy="13" r="2"/><path d="M12 3v5"/><circle cx="12" cy="3" r="1"/></svg>`,
+  trophy:   `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8"/><path d="M12 17v4"/><path d="M7 4h10v5a5 5 0 01-10 0V4z"/><path d="M7 5H4a2 2 0 000 4h3"/><path d="M17 5h3a2 2 0 010 4h-3"/></svg>`,
+};
+const CARDS = [
+  {icon:'food',     tag:'ИИ Анализ',                           title:'СЧЕТЧИК КАЛОРИЙ\nПО ФОТО',  desc:'Считает калории по фото еды. Просто наведи камеру на тарелку — алгоритм распознает состав и БЖУ автоматически.'},
+  {icon:'dumbbell', tag:'Тренируйся с чем угодно',             title:'УМНЫЙ\nИНВЕНТАРЬ',          desc:'Адаптация под зал или дом. Система мгновенно перестраивает программу под доступное оборудование.'},
+  {icon:'bolt',     tag:'Главный блок / Встроенный алгоритм',  title:'SOFIT-COLLIDER™',           desc:'Перестраивает план в реальном времени, если ты не выспался или имеешь другой негативный фактор.'},
+  {icon:'trophy',   tag:'Сделай спорт интересным',              title:'СИСТЕМА АКТИВНОСТИ\nИ НАГРАД', desc:'Создай серию и получи награды за ежедневную активность. Особо активные пользователи Sofit будут участвовать в розыгрышах и призах.'},
+  {icon:'pulse',    tag:'Фулл Фокус',                          title:'ФОКУСИРУЙСЯ\nНА ПРОЦЕССЕ',  desc:'Режим концентрации во время подхода. Минимизирует отвлекающие факторы для пиковой продуктивности.'},
+  {icon:'robot',    tag:'AI-Тренер',                           title:'ПЕРСОНАЛЬНЫЙ\nAI-ТРЕНЕР',   desc:'Качественный подход к тренировкам исключительно по твоим целям и метрикам — залог успешного роста в спорте и жизни.'},
+];
+let cur=0;
+
+(function buildCar(){
+  const inner=document.getElementById('carInner');
+  const total=CARDS.length;
+  CARDS.forEach((c,i)=>{
+    const d=document.createElement('div');
+    d.dataset.i=i;
+    d.innerHTML=`<div class="sc-icon">${CARD_SVGS[c.icon]||''}</div><div class="sc-tag">${c.tag}</div><div class="sc-title">${c.title.replace('\n','<br>')}</div><div class="sc-desc">${c.desc}</div>`;
+    d.onclick=()=>{ if(i===cur) return; cur=i; updateCar(); };
+    inner.appendChild(d);
+  });
+  updateCar();
+})();
+
+function updateCar(){
+  const total=CARDS.length;
+  const prev=(cur-1+total)%total;
+  const next=(cur+1)%total;
+  const cards=Array.from(document.getElementById('carInner').children);
+  cards.forEach((d,i)=>{
+    d.className='sc';
+    if(i===cur)        d.classList.add('active');
+    else if(i===prev)  d.classList.add('side-prev');
+    else if(i===next)  d.classList.add('side-next');
+    else               d.classList.add('car-hidden');
+  });
+}
+
+function carPrev(){ cur=(cur-1+CARDS.length)%CARDS.length; updateCar(); }
+function carNext(){ cur=(cur+1)%CARDS.length; updateCar(); }
+
+const FAQS=[
+  {q:'Нужны ли мне смарт-часы?',a:'Необязательно. В Sofit можно вводить данные самостоятельно. Занимает это в среднем, не более 2–3 минут в день.'},
+  {q:'Как мне следить за техникой?',a:'Благодаря алгоритму Sofit-Collider™ наш AI-тренер следит за техникой через камеру телефона и даёт голосовые рекомендации.'},
+  {q:'Подходит ли приложение для новичков?',a:'Да, Sofit адаптируется под любой уровень подготовки. Алгоритм Sofit-Collider™ начинает с твоих текущих показателей и постепенно увеличивает нагрузку.'},
+  {q:'Что если у меня была травма?',a:'Sofit учитывает ограничения и исключает упражнения, которые могут навредить. Просто укажи зоны, которые нужно беречь, при настройке профиля.'},
+  {q:'Можно ли тренироваться только дома?',a:'Абсолютно. Функция «Умный инвентарь» позволяет указать доступное оборудование — дома, в зале или на улице.'},
+  {q:'Нужно ли мне вводить всё, что я ем?',a:'Нет. Достаточно сфотографировать блюдо — Sofit распознает состав и посчитает КБЖУ автоматически.'},
+  {q:'Как быстро я увижу первый результат?',a:'Благодаря точной адаптации нагрузки, большинство пользователей замечают улучшение самочувствия и энергии уже через 10-14 дней.'},
+];
+const faqEl=document.getElementById('faqList');
+FAQS.forEach(f=>{
+  const div=document.createElement('div');
+  div.className='fi';
+  div.innerHTML=`<button class="fq" onclick="tFaq(this)">${f.q}<span class="fq-plus">+</span></button><div class="fa"><div class="fa-inner">${f.a}</div></div>`;
+  faqEl.appendChild(div);
+});
+function tFaq(btn){
+  const item=btn.parentElement,open=item.classList.contains('open');
+  document.querySelectorAll('.fi').forEach(i=>i.classList.remove('open'));
+  if(!open)item.classList.add('open');
+}
+
+function toggleMenu() {
+  const burger = document.getElementById('burger');
+  const menu = document.getElementById('mobileMenu');
+  const isOpen = menu.classList.toggle('open');
+  burger.classList.toggle('open', isOpen);
+  burger.setAttribute('aria-expanded', isOpen);
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+}
+function closeMenu() {
+  document.getElementById('burger').classList.remove('open');
+  document.getElementById('mobileMenu').classList.remove('open');
+  document.getElementById('burger').setAttribute('aria-expanded', false);
+  document.body.style.overflow = '';
+}
+
+function acceptCookies() {
+  localStorage.setItem('cookie_consent', '1');
+  document.getElementById('cookie-banner').classList.remove('show');
+  loadAnalytics();
+  setTimeout(function() {
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'cookie_consent_accepted', { event_category: 'Cookie', event_label: 'Banner' });
+    }
+  }, 300);
+}
+function dismissCookieBanner() {
+  document.getElementById('cookie-banner').classList.remove('show');
+}
+function toggleCookieDetail() {
+  const detail = document.getElementById('cookie-detail');
+  const arrow = document.getElementById('cookie-arrow');
+  const toggle = document.getElementById('cookie-toggle');
+  const isOpen = detail.classList.toggle('open');
+  arrow.textContent = isOpen ? '∧' : '∨';
+  toggle.childNodes[0].textContent = isOpen ? 'Свернуть ' : 'Подробнее ';
+}
+(function() {
+  if (!localStorage.getItem('cookie_consent')) {
+    setTimeout(() => document.getElementById('cookie-banner').classList.add('show'), 1500);
+  }
+})();
+
+function openModal(id) {
+  const overlay = document.getElementById(id);
+  const box = overlay.querySelector('.modal-box');
+  overlay.style.display = 'block';
+  document.body.style.overflow = 'hidden';
+  requestAnimationFrame(() => {
+    overlay.style.background = 'rgba(26,26,46,.7)';
+    box.style.opacity = '1';
+    box.style.transform = 'translateY(0) scale(1)';
+  });
+}
+function closeModal(id) {
+  const overlay = document.getElementById(id);
+  const box = overlay.querySelector('.modal-box');
+  overlay.style.background = 'rgba(26,26,46,0)';
+  box.style.opacity = '0';
+  box.style.transform = 'translateY(40px) scale(.97)';
+  setTimeout(() => {
+    overlay.style.display = 'none';
+    document.body.style.overflow = '';
+  }, 350);
+}
+function showPrivacy(e) {
+  e && e.preventDefault();
+  openModal('modal-privacy');
+}
+function showTerms(e) {
+  e && e.preventDefault();
+  openModal('modal-terms');
+}
+['modal-privacy','modal-terms'].forEach(id => {
+  document.getElementById(id).addEventListener('click', function(e) {
+    if (e.target === this) closeModal(id);
+  });
+});
+
+
+function validateContact(v) {
+  const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  const tgRe = /^@[a-zA-Z0-9_]{4,32}$/;
+  if (!v) return 'Введи email или Telegram (@username)';
+  if (!emailRe.test(v) && !tgRe.test(v)) {
+    return 'Введи корректный email (name@example.com) или Telegram (@username)';
+  }
+  return null;
+}
+
+function getRateLimit() {
+  try {
+    const raw = localStorage.getItem('_sofit_rl');
+    if (!raw) return { count: 0, since: Date.now() };
+    return JSON.parse(raw);
+  } catch(e) {
+    return { count: 0, since: Date.now() };
+  }
+}
+
+function checkRateLimit() {
+  const now = Date.now();
+  let rl = getRateLimit();
+  if (now - rl.since > 600000) {
+    rl = { count: 0, since: now };
+  }
+  rl.count++;
+  try { localStorage.setItem('_sofit_rl', JSON.stringify(rl)); } catch(e) {}
+  return rl.count > 3;
+}
+
+async function sendCon() {
+  const v = document.getElementById('conVal').value.trim();
+  const errEl = document.getElementById('conErr');
+  const btn = document.getElementById('conBtn');
+
+  const err = validateContact(v);
+  if (err) {
+    document.getElementById('conErrText').textContent = err;
+    errEl.classList.add('show');
+    return;
+  }
+  errEl.classList.remove('show');
+
+  if (checkRateLimit()) {
+    document.getElementById('conErrText').textContent = 'Слишком много попыток. Попробуй через несколько минут.';
+    errEl.classList.add('show');
+    return;
+  }
+
+  btn.textContent = 'Отправка...';
+  btn.disabled = true;
+
+  try {
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        access_key: 'f964d7fb-1e20-49de-b2dc-e79a34d776e3',
+        subject: 'Новая заявка на бета-тест Sofit',
+        from_name: 'Sofit Beta',
+        email: v.includes('@') && !v.startsWith('@') ? v : 'noreply@sofit.app',
+        message: 'Новый бета-тестер: ' + v,
+        botcheck: ''
+      })
+    });
+    const data = await res.json();
+    if (data.success) {
+      document.getElementById('conOk').classList.add('show');
+      document.getElementById('conVal').value = '';
+      errEl.classList.remove('show');
+    } else {
+      const serverMsg = data.message || JSON.stringify(data);
+      throw new Error(serverMsg);
+    }
+  } catch(e) {
+    const isNetwork = e instanceof TypeError;
+    document.getElementById('conErrText').textContent = isNetwork
+      ? 'Нет соединения. Проверь интернет или напиши: sofitbetatest@gmail.com'
+      : 'Ошибка: ' + e.message + '. Напиши нам: sofitbetatest@gmail.com';
+    errEl.classList.add('show');
+  } finally {
+    btn.textContent = 'Получить доступ';
+    btn.disabled = false;
+  }
+}
+
+document.getElementById('conVal').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') sendCon();
+});
+
+(function(){
+  const pressable = [
+    document.getElementById('phWkBtn'),
+    document.getElementById('phScoreSleep'),
+    document.getElementById('phScoreFood')
+  ].filter(Boolean);
+
+  pressable.forEach(function(el){
+    const press = function(){ el.classList.add('pressed'); };
+    const release = function(){ el.classList.remove('pressed'); };
+
+    el.addEventListener('pointerdown', press);
+    el.addEventListener('pointerup', release);
+    el.addEventListener('pointerleave', release);
+    el.addEventListener('pointercancel', release);
+  });
+})();
+
+document.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+document.addEventListener('keydown', function(e){
+  const k = e.key;
+  const blocked =
+    k === 'F12' ||
+    (e.ctrlKey && !e.shiftKey && (k === 'u' || k === 'U')) ||
+    (e.ctrlKey && e.shiftKey && ['i','I','j','J','c','C'].includes(k)) ||
+    (e.metaKey && e.altKey && ['i','I','j','J','c','C'].includes(k)); // macOS Safari/Chrome вариант
+  if (blocked) e.preventDefault();
+});
+
+const secs=document.querySelectorAll('section[id]');
+const nas=document.querySelectorAll('.nav-center a');
+window.addEventListener('scroll',()=>{
+  let c='';
+  secs.forEach(s=>{if(scrollY>=s.offsetTop-150)c=s.id;});
+  nas.forEach(a=>{a.style.color=a.getAttribute('href')==='#'+c?'#1a1a2e':'';});
+});
+
+(function(){
+  const scrollArea = document.querySelector('.ph-scroll-area');
+  if(!scrollArea) return;
+
+  function buildItems(container, ringSelector, numSelector, progressSelector){
+    if(!container) return [];
+    return Array.from(container.querySelectorAll(ringSelector)).map(ring=>{
+      const progressCircle = progressSelector
+        ? ring.querySelector(progressSelector)
+        : ring.querySelectorAll('svg circle')[1];
+      const numEl = ring.querySelector(numSelector);
+      const r = parseFloat(progressCircle.getAttribute('r'));
+      return {
+        circle: progressCircle,
+        numEl: numEl,
+        circumference: 2 * Math.PI * r,
+        targetOffset: parseFloat(progressCircle.getAttribute('stroke-dashoffset')),
+        targetNum: parseInt(numEl.textContent, 10)
+      };
+    });
+  }
+
+  function setupRingGroup(container, items, onStart){
+    if(!container || !items.length) return;
+
+    items.forEach(it=>{
+      it.circle.setAttribute('stroke-dashoffset', it.circumference);
+      it.numEl.textContent = '0';
+    });
+
+    let played = false;
+    function playAnimation(){
+      if(played) return;
+      played = true;
+      if(onStart) onStart();
+      const duration = 1100;
+      const start = performance.now();
+
+      function frame(now){
+        const t = Math.min(1, (now - start) / duration);
+        const eased = 1 - Math.pow(1 - t, 3);
+
+        items.forEach(it=>{
+          const offset = it.circumference - (it.circumference - it.targetOffset) * eased;
+          it.circle.setAttribute('stroke-dashoffset', offset);
+          it.numEl.textContent = Math.round(it.targetNum * eased);
+        });
+
+        if(t < 1){
+          requestAnimationFrame(frame);
+        }
+      }
+      requestAnimationFrame(frame);
+    }
+
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting && entry.intersectionRatio >= 0.6){
+          playAnimation();
+        }
+      });
+    }, { root: scrollArea, threshold: [0, 0.6, 1] });
+
+    observer.observe(container);
+  }
+
+  const scoresBlock = document.querySelector('.ph-scores');
+  const ageBlock = document.querySelector('.ph-age');
+
+  setupRingGroup(scoresBlock, buildItems(scoresBlock, '.ph-ring', '.ph-ring-n'));
+
+  const ageItems = buildItems(ageBlock, '.ph-age-ring', '.ph-age-num', '.ph-age-progress');
+  setupRingGroup(ageBlock, ageItems, function(){
+    if(ageBlock) ageBlock.classList.add('filled');
+  });
+})();
+
+(function(){
+  const el = document.getElementById('phAiSearchText');
+  if(!el) return;
+
+  const phrases = [
+    'Какая программа у Голубочкина?',
+    'Как научиться подтягиваться?',
+    'Как научиться стоять на руках?',
+    'Программа чтобы нарастить мышцы за лето',
+    'Сколько нужно делать подходов?',
+    'От чего растут мышцы?'
+  ];
+
+  let phraseIndex = 0;
+  let charIndex = 0;
+  let deleting = false;
+
+  const typeSpeed = 55;
+  const deleteSpeed = 30;
+  const pauseAfterType = 1400;
+  const pauseAfterDelete = 400;
+
+  function tick(){
+    const current = phrases[phraseIndex];
+
+    if(!deleting){
+      charIndex++;
+      el.textContent = current.slice(0, charIndex);
+      el.scrollLeft = el.scrollWidth;
+      if(charIndex === current.length){
+        deleting = true;
+        setTimeout(tick, pauseAfterType);
+        return;
+      }
+      setTimeout(tick, typeSpeed);
+    } else {
+      charIndex--;
+      el.textContent = current.slice(0, charIndex);
+      el.scrollLeft = el.scrollWidth;
+      if(charIndex === 0){
+        deleting = false;
+        phraseIndex = (phraseIndex + 1) % phrases.length;
+        setTimeout(tick, pauseAfterDelete);
+        return;
+      }
+      setTimeout(tick, deleteSpeed);
+    }
+  }
+
+  setTimeout(tick, 600);
+})();
+</script>
+</body>
+</html>
